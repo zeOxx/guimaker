@@ -9,9 +9,9 @@
     <file path="/Panel.java" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380042859452" ignored="false" />
     <file path="/Label.java" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380043798772" ignored="false" />
     <file path="/TextField.java" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380043754712" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380044321593" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380044704084" ignored="false" />
     <file path="/TextArea.java" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380044183124" ignored="false" />
-    <file path="/Button.java" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380044317533" ignored="false" />
+    <file path="/Button.java" changelist="8a389593-6ce8-4b41-9fed-1d8b75980bde" time="1380044670672" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,7 @@
       <file leaf-file-name="Button.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="4" selection-start="211" selection-end="211" vertical-scroll-proportion="0.23394495">
+            <state line="29" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.565367">
               <folding />
             </state>
           </provider>
@@ -111,7 +111,7 @@
       <file leaf-file-name="TextArea.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextArea.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
+            <state line="13" column="0" selection-start="214" selection-end="383" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -462,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="21" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
@@ -476,9 +469,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="214" selection-end="383" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="4" selection-start="211" selection-end="211" vertical-scroll-proportion="0.23394495">
+        <state line="29" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.565367">
           <folding />
         </state>
       </provider>

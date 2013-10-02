@@ -1,5 +1,6 @@
 package no.whg.GUIMaker;
 
+import java.awt.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -64,7 +65,7 @@ public class GUIMaker extends JFrame {
         });
 
         JMenuItem fileMenuLoad = new JMenuItem("Load");
-        fileMenuLoad.setMnemonic(KeyEvent.VK_S);
+        fileMenuLoad.setMnemonic(KeyEvent.VK_L);
         fileMenuLoad.setToolTipText("Load from file");
         fileMenuLoad.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
@@ -74,6 +75,7 @@ public class GUIMaker extends JFrame {
 
         fileMenu.add(fileMenuSave);
         fileMenu.add(fileMenuLoad);
+        fileMenu.addSeparator();
         fileMenu.add(fileMenuExit);
         menu.add(fileMenu);
 
@@ -82,7 +84,7 @@ public class GUIMaker extends JFrame {
         helpMenu.setMnemonic(KeyEvent.VK_H);
 
         JMenuItem helpMenuAbout = new JMenuItem("About");
-        helpMenuAbout.setMnemonic(KeyEvent.VK_S);
+        helpMenuAbout.setMnemonic(KeyEvent.VK_A);
         helpMenuAbout.setToolTipText("Facts about this program");
         helpMenuAbout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
@@ -94,7 +96,37 @@ public class GUIMaker extends JFrame {
         menu.add(helpMenu);
 
         setJMenuBar(menu);
-   }
+
+        // Toolbar
+        JToolBar toolbar = new JToolBar();
+
+        JButton rowUpButton = new JButton();
+        toolbar.add(rowUpButton);
+        rowUpButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                moveRow();
+            }
+
+        });
+
+        add(toolbar, BorderLayout.NORTH);
+
+        // Contents
+        JTable table = new JTable(new ComponentTable());
+        table.setPreferredScrollableViewportSize(new Dimension(500, 70));
+        table.setFillsViewportHeight(true);
+        table.getModel().addTableModelListener(table);
+
+        //Create the scroll pane and add the table to it.
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        //Add the scroll pane to this panel.
+        add(scrollPane);
+    }
+
+    private void moveRow(){
+        // TODO: something
+    }
 
     public void loadGUI (){
         setRowList(fc.loadGUI());

@@ -17,10 +17,7 @@ public class TextArea extends JTextArea {
     private String varName;
     private String text;
 
-    private int x;
-    private int y;
-    private int column;
-    private int row;
+    private Data data;
 
     /**
      *
@@ -30,10 +27,7 @@ public class TextArea extends JTextArea {
         varName = "var" + String.valueOf(id);
         text = "";
 
-        x = 0;
-        y = 0;
-        column = 0;
-        row = 0;
+        data = new Data();
     }
 
     public String getVarName() {
@@ -50,37 +44,5 @@ public class TextArea extends JTextArea {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
     }
 }

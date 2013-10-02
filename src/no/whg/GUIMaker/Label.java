@@ -18,10 +18,7 @@ public class Label extends JLabel {
     private String text;
     private int anchor;
 
-    private int x;
-    private int y;
-    private int column;
-    private int row;
+    private Data data;
 
     /**
      *
@@ -32,10 +29,7 @@ public class Label extends JLabel {
         text = "";
         anchor = CENTER;
 
-        x = 0;
-        y = 0;
-        column = 0;
-        row = 0;
+        data = new Data();
     }
 
     /**
@@ -84,69 +78,5 @@ public class Label extends JLabel {
      */
     public void setAnchor(int anchor) {
         this.anchor = anchor;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getX() {
-        return x;
-    }
-
-    /**
-     *
-     * @param x
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getY() {
-        return y;
-    }
-
-    /**
-     *
-     * @param y
-     */
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getColumn() {
-        return column;
-    }
-
-    /**
-     *
-     * @param column
-     */
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getRow() {
-        return row;
-    }
-
-    /**
-     *
-     * @param row
-     */
-    public void setRow(int row) {
-        this.row = row;
     }
 }

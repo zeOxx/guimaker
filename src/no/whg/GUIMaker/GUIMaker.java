@@ -1,6 +1,9 @@
 package no.whg.GUIMaker;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.*;
 
 /**
@@ -9,9 +12,18 @@ import java.util.*;
  * Date: 9/24/13
  * Time: 5:56 PM
  */
-public class GUIMaker {
+public class GUIMaker extends JFrame {
     private ArrayList rowList = new ArrayList<RowElement>();
     protected FileChooser fc = new FileChooser();
+    static GUIMaker guim;
+
+    public GUIMaker (){
+        createMenu();
+        setTitle("GUIMaker");
+        setSize(700, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
 
     public static void main (String[] args){
         SwingUtilities.invokeLater(new Runnable() {
@@ -22,8 +34,67 @@ public class GUIMaker {
     }
 
     static void createUI (){
-
+        guim = new GUIMaker();
+        guim.setVisible(true);
     }
+
+    private void createMenu(){
+        // Menu bar
+        JMenuBar menu = new JMenuBar();
+        // "File" menu
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic(KeyEvent.VK_F);
+
+        JMenuItem fileMenuExit = new JMenuItem("Exit");
+        fileMenuExit.setMnemonic(KeyEvent.VK_E);
+        fileMenuExit.setToolTipText("Exit application");
+        fileMenuExit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                System.exit(0);
+            }
+        });
+
+        JMenuItem fileMenuSave = new JMenuItem("Save");
+        fileMenuSave.setMnemonic(KeyEvent.VK_S);
+        fileMenuSave.setToolTipText("Save your work");
+        fileMenuSave.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                saveGUI();
+            }
+        });
+
+        JMenuItem fileMenuLoad = new JMenuItem("Load");
+        fileMenuLoad.setMnemonic(KeyEvent.VK_S);
+        fileMenuLoad.setToolTipText("Load from file");
+        fileMenuLoad.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                loadGUI();
+            }
+        });
+
+        fileMenu.add(fileMenuSave);
+        fileMenu.add(fileMenuLoad);
+        fileMenu.add(fileMenuExit);
+        menu.add(fileMenu);
+
+        // "About" menu
+        JMenu helpMenu = new JMenu("Help");
+        helpMenu.setMnemonic(KeyEvent.VK_H);
+
+        JMenuItem helpMenuAbout = new JMenuItem("About");
+        helpMenuAbout.setMnemonic(KeyEvent.VK_S);
+        helpMenuAbout.setToolTipText("Facts about this program");
+        helpMenuAbout.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                //help();
+            }
+        });
+
+        helpMenu.add(helpMenuAbout);
+        menu.add(helpMenu);
+
+        setJMenuBar(menu);
+   }
 
     public void loadGUI (){
         setRowList(fc.loadGUI());

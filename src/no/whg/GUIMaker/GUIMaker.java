@@ -1,16 +1,13 @@
 package no.whg.GUIMaker;
 
 import javax.swing.*;
-import java.io.*;
 import java.util.*;
-import java.io.Serializable;
 
 /**
- * Created with IntelliJ IDEA.
+ * Created with IntelliJ IDEA for ${PROJECT_NAME}.
  * User: snorre
  * Date: 9/24/13
  * Time: 5:56 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GUIMaker {
     private ArrayList rowList = new ArrayList<RowElement>();

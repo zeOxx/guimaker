@@ -1,16 +1,14 @@
 package no.whg.GUIMaker;
 
 import java.io.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.*;
 
 /**
- * Created with IntelliJ IDEA.
+ * Created with IntelliJ IDEA for ${PROJECT_NAME}
  * User: Snorre
  * Date: 10/2/13
  * Time: 4:58 PM
- * To change this template use File | Settings | File Templates.
  */
 public class FileChooser {
     JFileChooser jfc;

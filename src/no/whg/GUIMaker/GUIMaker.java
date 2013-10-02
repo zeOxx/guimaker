@@ -13,7 +13,7 @@ import java.io.Serializable;
  * To change this template use File | Settings | File Templates.
  */
 public class GUIMaker {
-    public ArrayList rowList = new ArrayList<RowElement>();
+    private ArrayList rowList = new ArrayList<RowElement>();
     protected FileChooser fc = new FileChooser();
 
     public static void main (String[] args){
@@ -29,11 +29,11 @@ public class GUIMaker {
     }
 
     public void loadGUI (){
-        rowList = fc.loadGUI();
+        setRowList(fc.loadGUI());
     }
 
     public void saveGUI (){
-        fc.saveGUI(rowList);
+        fc.saveGUI(getRowList());
     }
 
     public void previewGUI (){
@@ -42,5 +42,25 @@ public class GUIMaker {
 
     public void saveSource (){
 
+    }
+
+    public ArrayList getRowList(){
+        return this.rowList;
+    }
+
+    private void setRowList(ArrayList arg){
+        this.rowList = arg;
+    }
+
+    public void addToRowList(RowElement arg){
+        this.rowList.add(arg);
+    }
+
+    public void removeIndexFromRowList(int arg){
+        this.rowList.remove(arg);
+    }
+
+    public void removeObjectFromRowList(RowElement arg){
+        this.rowList.remove(arg);
     }
 }

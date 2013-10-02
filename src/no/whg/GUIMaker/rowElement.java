@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Time: 7:31 PM
  * To change this template use File | Settings | File Templates.
  */
-public class rowElement implements Serializable {
+public class RowElement implements Serializable {
     //bla
     private static final long serialVersionUID = 1L;
 }

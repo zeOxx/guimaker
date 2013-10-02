@@ -13,7 +13,7 @@ import java.io.Serializable;
  * To change this template use File | Settings | File Templates.
  */
 public class GUIMaker {
-    public ArrayList rowList = new ArrayList<rowElement>();
+    public ArrayList rowList = new ArrayList<RowElement>();
 
     public static void main (String[] args){
         SwingUtilities.invokeLater(new Runnable() {
@@ -32,7 +32,7 @@ public class GUIMaker {
         try {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            this.rowList = (ArrayList<rowElement>)ois.readObject();
+            this.rowList = (ArrayList<RowElement>)ois.readObject();
             ois.close();
             fis.close();
         } catch (IOException e) {

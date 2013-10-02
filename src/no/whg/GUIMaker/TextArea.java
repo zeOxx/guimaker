@@ -17,7 +17,7 @@ public class TextArea extends JTextArea {
     private String varName;
     private String text;
 
-    private Data data;
+    public Data data;
 
     /**
      *

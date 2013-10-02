@@ -18,7 +18,7 @@ public class Label extends JLabel {
     private String text;
     private int anchor;
 
-    private Data data;
+    public Data data;
 
     /**
      *

@@ -18,7 +18,7 @@ public class TextField extends JTextField {
     private String text;
     private int anchor;
 
-    private Data data;
+    public Data data;
 
     /**
      *

@@ -14,6 +14,7 @@ import java.io.Serializable;
  */
 public class GUIMaker {
     public ArrayList rowList = new ArrayList<RowElement>();
+    protected FileChooser fc = new FileChooser();
 
     public static void main (String[] args){
         SwingUtilities.invokeLater(new Runnable() {
@@ -26,43 +27,20 @@ public class GUIMaker {
     static void createUI (){
 
     }
-//
-    public boolean loadGUI (File f){
-        Object object = null;
-        try {
-            FileInputStream fis = new FileInputStream(f);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            this.rowList = (ArrayList<RowElement>)ois.readObject();
-            ois.close();
-            fis.close();
-        } catch (IOException e) {
-            return false;
-        } catch (ClassNotFoundException e) {
-            return false;
-        }
-        return true;
+
+    public void loadGUI (){
+        rowList = fc.loadGUI();
     }
 
-    public boolean saveGUI (File f){
-        try {
-            FileOutputStream fos = new FileOutputStream(f);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(rowList);
-            oos.close();
-            fos.close();
-        } catch (IOException e) {
-            return false;
-        }
-        return true;
+    public void saveGUI (){
+        fc.saveGUI(rowList);
     }
 
     public void previewGUI (){
-        //previewWindow = new previewWindow; previewWindow.run; or something
+
     }
 
     public void saveSource (){
 
     }
-
-
 }

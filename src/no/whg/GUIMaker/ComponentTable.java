@@ -46,7 +46,7 @@ public class ComponentTable extends AbstractTableModel implements TableModelList
         String columnName = model.getColumnName(column);
         Object data = model.getValueAt(row, column);
 
-        // Do something with the data...
+        // Do something with the coreElement...
     }
 
     public int getColumnCount() {
@@ -80,7 +80,7 @@ public class ComponentTable extends AbstractTableModel implements TableModelList
      * editable.
      */
     public boolean isCellEditable(int row, int col) {
-        //Note that the data/cell address is constant,
+        //Note that the coreElement/cell address is constant,
         //no matter where the cell appears onscreen.
         /*if (col < 2) {
             return false;
@@ -92,7 +92,7 @@ public class ComponentTable extends AbstractTableModel implements TableModelList
 
     /*
      * Don't need to implement this method unless your table's
-     * data can change.
+     * coreElement can change.
      */
     public void setValueAt(Object value, int row, int col) {
         /*if (DEBUG) {
@@ -106,7 +106,7 @@ public class ComponentTable extends AbstractTableModel implements TableModelList
         fireTableCellUpdated(row, col);
 
         /*if (DEBUG) {
-            System.out.println("New value of data:");
+            System.out.println("New value of coreElement:");
             printDebugData();
         }*/
     }

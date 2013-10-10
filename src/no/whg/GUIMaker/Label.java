@@ -9,59 +9,19 @@ import javax.swing.JLabel;
  * Date: 24.09.13
  * Time: 19:15
  */
-public class Label extends JLabel {
+public class Label extends CoreElement {
 
     /**
      * Variables
      */
-    private String varName;
-    private String text;
     private int anchor;
-
-    public Data data;
 
     /**
      *
      * @param id
      */
     public Label(int id) {
-        varName = "var" + String.valueOf(id);
-        text = "";
-        anchor = CENTER;
-
-        data = new Data();
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getVarName() {
-        return varName;
-    }
-
-    /**
-     *
-     * @param varName
-     */
-    public void setVarName(String varName) {
-        this.varName = varName;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getText() {
-        return text;
-    }
-
-    /**
-     *
-     * @param text
-     */
-    public void setText(String text) {
-        this.text = text;
+        super(id);
     }
 
     /**

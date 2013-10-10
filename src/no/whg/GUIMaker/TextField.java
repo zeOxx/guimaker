@@ -9,50 +9,13 @@ import javax.swing.JTextField;
  * Date: 24.09.13
  * Time: 19:26
  */
-public class TextField extends JTextField {
-
-    /**
-     * Variables
-     */
-    private String varName;
-    private String text;
-    private int anchor;
-
-    public Data data;
+public class TextField extends CoreElement {
 
     /**
      *
      * @param id
      */
     public TextField(int id) {
-        varName = "var" + String.valueOf(id);
-        text = "";
-        anchor = CENTER;
-
-        data = new Data();
-    }
-
-    public String getVarName() {
-        return varName;
-    }
-
-    public void setVarName(String varName) {
-        this.varName = varName;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public int getAnchor() {
-        return anchor;
-    }
-
-    public void setAnchor(int anchor) {
-        this.anchor = anchor;
+        super(id);
     }
 }

@@ -9,43 +9,20 @@ import javax.swing.JButton;
  * Date: 24.09.13
  * Time: 19:38
  */
-public class Button extends JButton {
+
+public class Button extends CoreElement {
 
     /**
      * Variables
      */
-    private String varName;
-    private String text;
     private int anchor;
-
-    public Data data;
 
     /**
      *
      * @param id
      */
     public Button(int id) {
-        varName = "var" + String.valueOf(id);
-        text = "";
-        anchor = CENTER;
-
-        data = new Data();
-    }
-
-    public String getVarName() {
-        return varName;
-    }
-
-    public void setVarName(String varName) {
-        this.varName = varName;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+        super(id);
     }
 
     public int getAnchor() {

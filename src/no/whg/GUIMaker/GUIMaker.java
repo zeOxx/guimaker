@@ -109,6 +109,8 @@ public class GUIMaker extends JFrame {
 
         });
 
+        toolbar.setFloatable(false);
+        
         add(toolbar, BorderLayout.NORTH);
 
         // Contents

@@ -1,5 +1,7 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.MyFileManager;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,14 +33,14 @@ public class GMenuItem extends JMenuItem {
             case 1: // Save
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //saveGUI();
+                        MyFileManager.getInstance().saveGUI();
                     }
                 });
                 break;
             case 2: // Load
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //loadGUI();
+                        MyFileManager.getInstance().loadGUI();
                     }
                 });
                 break;
@@ -48,6 +50,10 @@ public class GMenuItem extends JMenuItem {
                         //help();
                     }
                 });
+                break;
+            default:
+                // Error message here
+                break;
         }
     }
 }

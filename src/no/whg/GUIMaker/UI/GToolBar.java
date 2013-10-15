@@ -1,7 +1,6 @@
 package no.whg.GUIMaker.UI;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 /**
  * Created with IntelliJ IDEA.

@@ -11,10 +11,16 @@ import java.awt.event.KeyEvent;
  * To change this template use File | Settings | File Templates.
  */
 public class GMenuBar extends JMenuBar {
+    /**
+     * Constructor for GMenuBar
+     */
     public GMenuBar (){
         populateG();
     }
 
+    /**
+     * Creates content for this menubar
+     */
     private void populateG(){
         GMenu FileMenu = new GMenu("File", KeyEvent.VK_F, 0);
         this.add(FileMenu);

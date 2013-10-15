@@ -14,14 +14,27 @@ import java.awt.event.ActionListener;
  * To change this template use File | Settings | File Templates.
  */
 public class GMenuItem extends JMenuItem {
+    /**
+     * Constructor for GMenuItem
+     *
+     * @param tag The title of this menu item
+     * @param key The hotkey for this menu item
+     * @param tooltip The tooltip for this menu item
+     * @param type The type of menu item to create
+     */
     public GMenuItem(String tag, int key, String tooltip, int type){
         super(tag);
         this.setMnemonic(key);
-        addActionListener(type);
+        populateG(type);
         this.setToolTipText(tooltip);
     }
 
-    private void addActionListener(int type){
+    /**
+     * Creates content for this menu item
+     *
+     * @param type The type of content to create
+     */
+    private void populateG(int type){
         switch(type){
             case 0: // Exit
                 this.addActionListener(new ActionListener() {

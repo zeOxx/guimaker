@@ -12,11 +12,22 @@ import java.awt.event.ActionListener;
  * To change this template use File | Settings | File Templates.
  */
 public class GButton extends JButton {
+    /**
+     * Constructor for Gbutton
+     *
+     * @param tooltip The tooltip for this button
+     * @param type The type of button to create
+     */
     public GButton(String tooltip, int type){
         this.setToolTipText(tooltip);
         populateG(type);
     }
 
+    /**
+     * Creates content for this button
+     *
+     * @param type The type of content to create
+     */
     private void populateG(int type){
         switch (type){
             case 0: // Move a row up

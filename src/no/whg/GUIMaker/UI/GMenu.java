@@ -11,12 +11,24 @@ import java.awt.event.KeyEvent;
  * To change this template use File | Settings | File Templates.
  */
 public class GMenu extends JMenu {
+    /**
+     * Constructor for GMenu
+     *
+     * @param tag The title of this menu
+     * @param key The hotkey for this menu
+     * @param type The type of menu to create
+     */
     public GMenu (String tag, int key, int type){
         super(tag);
         this.setMnemonic(key);
         populateG(type);
     }
 
+    /**
+     * Creates content for this menu
+     *
+     * @param type The type of content to create
+     */
     private void populateG(int type){
         switch(type){
             case 0: // File

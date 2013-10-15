@@ -13,6 +13,11 @@ import javax.swing.*;
 public class GUIMaker extends JFrame {
     static GFrame guim;
 
+    /**
+     * Main
+     *
+     * @param args Command line arguments
+     */
     public static void main (String[] args){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -21,6 +26,9 @@ public class GUIMaker extends JFrame {
         });
     }
 
+    /**
+     * Creates the user interface
+     */
     static void createUI (){
         guim = new GFrame();
         guim.setVisible(true);

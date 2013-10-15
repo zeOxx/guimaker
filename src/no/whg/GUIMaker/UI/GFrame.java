@@ -1,12 +1,7 @@
 package no.whg.GUIMaker.UI;
 
-import no.whg.GUIMaker.ComponentTable;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 
 /**
  * Created with IntelliJ IDEA.

@@ -13,6 +13,7 @@ import javax.swing.*;
 public class FileChooser {
     JFileChooser jfc;
 
+    /* TODO: commenting */
     public FileChooser (){
         //Create a file chooser
         jfc = new JFileChooser();
@@ -56,6 +57,19 @@ public class FileChooser {
 
             }
         } else {
+
+        }
+    }
+
+    public void saveGUI (ArrayList re, File temp){
+        try {
+            FileOutputStream fos = new FileOutputStream(temp);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(re);
+            oos.close();
+            fos.close();
+            /* TODO: "file has been saved" dialog */
+        } catch (IOException e) {
 
         }
     }

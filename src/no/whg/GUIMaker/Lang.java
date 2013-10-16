@@ -69,11 +69,22 @@ public class Lang {
         getBundle();
     }
 
+    /**
+     * Gets the current locale
+     *
+     * @return currentLocale
+     */
     public Locale getCurrentLocale(){
         return currentLocale;
     }
 
+    /**
+     * Sets the current locale
+     *
+     * @param l the new locale
+     */
     public void setCurrentLocale(Locale l){
         this.currentLocale = l;
+        getBundle();
     }
 }

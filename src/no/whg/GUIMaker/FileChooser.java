@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
+import static no.whg.GUIMaker.MyFileManager.getInstance;
+
 /**
  * Created with IntelliJ IDEA for ${PROJECT_NAME}
  * User: Snorre
@@ -33,12 +35,14 @@ public class FileChooser {
                 fis.close();
                 return re;
             } catch (IOException e) {
+                /* TODO: Exception handling */
                 return null;
             } catch (ClassNotFoundException e) {
+                /* TODO: Exception handling */
                 return null;
             }
         } else {
-
+            /* TODO: Error message */
         }
         return null;
     }
@@ -53,11 +57,13 @@ public class FileChooser {
                 oos.writeObject(re);
                 oos.close();
                 fos.close();
+                getInstance().setLastFile(file);
+                /* TODO: "file has been saved" dialog */
             } catch (IOException e) {
-
+                /* TODO: Exception handling */
             }
         } else {
-
+            /* TODO: Error message */
         }
     }
 
@@ -70,7 +76,7 @@ public class FileChooser {
             fos.close();
             /* TODO: "file has been saved" dialog */
         } catch (IOException e) {
-
+            /* TODO: Exception handling */
         }
     }
 }

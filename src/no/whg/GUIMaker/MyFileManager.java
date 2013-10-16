@@ -39,6 +39,23 @@ public class MyFileManager {
     }
 
     /**
+     * Getter for lastFile
+     *
+     * @return lastFile
+     */
+    public File getLastFile(){
+        return lastFile;
+    }
+
+    /**
+     * Setter for lastFile
+     * @param f The file to set
+     */
+    public void setLastFile(File f){
+        this.lastFile = f;
+    }
+
+    /**
      * Fetches the list of rows.
      *
      * @return Returns the ArrayList rowList

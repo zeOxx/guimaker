@@ -1,7 +1,11 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.MyFileManager;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,12 +15,44 @@ import java.awt.*;
  * To change this template use File | Settings | File Templates.
  */
 public class GFrame extends JFrame {
+    /**
+     * KeyEventDispatcher to handle global key bindings
+     */
+    private class MyDispatcher implements KeyEventDispatcher {
+        @Override
+        public boolean dispatchKeyEvent(KeyEvent e) {
+            if (e.getID() == KeyEvent.KEY_PRESSED) {
+                // New
+                if ((e.getKeyCode() == KeyEvent.VK_N)){
+                    if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
+                        MyFileManager.getInstance().newGUI();
+                    }
+                }
+                // Load
+                else if ((e.getKeyCode() == KeyEvent.VK_L)){
+                    if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
+                        MyFileManager.getInstance().loadGUI();
+                    }
+                }
+                // Save
+                else if ((e.getKeyCode() == KeyEvent.VK_S)){
+                    if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
+                        MyFileManager.getInstance().saveGUI(false);
+                    }
+                }
+            }
+            return false;
+        }
+    }
+
     public GFrame (String tag){
         populateG();
         setTitle(tag);
         setSize(700, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+        manager.addKeyEventDispatcher(new MyDispatcher());
     }
 
     private void populateG(){

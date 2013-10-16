@@ -2,23 +2,35 @@ package no.whg.GUIMaker;
 
 /**
  * Created with IntelliJ IDEA.
+ * Package: no.whg.GUIMaker
  * User: Inge
- * Date: 02.10.13
- * Time: 18:47
- * Project: guimaker
+ * Date: 10.10.13
+ * Time: 17:47
  */
-public class Data {
+public class CoreElement {
 
+    private String varName;
+    private String text;
     private int x;
     private int y;
     private int column;
     private int row;
 
-    public Data() {
+    public CoreElement(int id) {
+        varName = "var" + String.valueOf(id);
+        text = "";
         x = 0;
         y = 0;
         column = 0;
         row = 0;
+    }
+
+    public String getVarName() {
+        return varName;
+    }
+
+    public void setVarName(String varName) {
+        this.varName = varName;
     }
 
     public int getX() {

@@ -2,3 +2,4 @@
 workspace.xml.orig
 out/*
 *.class
+*.orig

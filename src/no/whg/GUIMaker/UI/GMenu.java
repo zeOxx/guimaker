@@ -32,23 +32,31 @@ public class GMenu extends JMenu {
     private void populateG(int type){
         switch(type){
             case 0: // File
-                GMenuItem FileMenuExit = new GMenuItem("Exit", KeyEvent.VK_E, "Exit application", 0);
-                GMenuItem FileMenuSave = new GMenuItem("Save", KeyEvent.VK_S, "Save your work", 1);
-                GMenuItem FileMenuLoad = new GMenuItem("Load", KeyEvent.VK_L, "Load from file", 2);
-                this.add(FileMenuSave);
-                this.add(FileMenuLoad);
+                // Add items
+                this.add(new GMenuItem("New", KeyEvent.VK_N, "Create new layout", 0));
+                this.add(new GMenuItem("Load", KeyEvent.VK_L, "Load from file", 1));
+                this.add(new GMenuItem("Save", KeyEvent.VK_S, "Save your work", 2));
+                this.add(new GMenuItem("Save as", KeyEvent.VK_A, "Save your work", 3));
                 this.addSeparator();
-                this.add(FileMenuExit);
+                this.add(new GMenuItem("Preview", KeyEvent.VK_P, "Preview the created layout", 4));
+                this.add(new GMenuItem("Generate code", KeyEvent.VK_G, "Generate Java code", 5));
+                this.addSeparator();
+                this.add(new GMenuItem("Exit", KeyEvent.VK_E, "Exit application", 6));
                 break;
-            case 1: // Help
-                GMenuItem HelpMenuAbout = new GMenuItem("About", KeyEvent.VK_A, "Facts about this program", 3);
-                this.add(HelpMenuAbout);
+            case 1: // Edit
+                // Add items
+                this.add(new GMenuItem("New row", KeyEvent.VK_N, "Create new row", 7));
+                this.addSeparator();
+                this.add(new GMenuItem("Preferences", KeyEvent.VK_P, "Change settings", 8));
                 break;
-            case 2:
-                //this.add();
+            case 2: // Help
+                // Add items
+                this.add(new GMenuItem("Help", KeyEvent.VK_H, "Help", 9));
+                this.addSeparator();
+                this.add(new GMenuItem("About", KeyEvent.VK_A, "Facts about this program", 10));
                 break;
             default:
-                //Error message here
+                /* TODO: Error message(s) */
                 break;
         }
     }

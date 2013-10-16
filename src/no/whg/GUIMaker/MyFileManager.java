@@ -1,5 +1,6 @@
 package no.whg.GUIMaker;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +16,7 @@ public class MyFileManager {
 
     private ArrayList rowList = new ArrayList<RowElement>();
     protected FileChooser fc = new FileChooser();
+    private File lastFile = null;
 
     /**
      * Default constructor.
@@ -82,6 +84,13 @@ public class MyFileManager {
     }
 
     /**
+     * Clears the ArrayList rowList
+     */
+    private void clearRowList(){
+        this.rowList = new ArrayList<RowElement>();
+    }
+
+    /**
      * Opens the dialog for loading configurations
      */
     public void loadGUI (){
@@ -89,9 +98,28 @@ public class MyFileManager {
     }
 
     /**
-     * Opens the dialog for saving configurations
+     * Saves files using FileChooser
+     *
+     * @param saveAs Whether the dialog should be opened
      */
-    public void saveGUI (){
-        fc.saveGUI(getRowList());
+    public void saveGUI (boolean saveAs){
+        if (saveAs){
+            fc.saveGUI(getRowList());
+        } else {
+            if (lastFile == null){
+                fc.saveGUI(getRowList());
+            } else {
+                fc.saveGUI(getRowList(), lastFile);
+            }
+        }
+    }
+
+    /**
+     * Sets up a new, blank UI table
+     */
+    public void newGUI(){
+        lastFile = null;
+        /* TODO: reset table */
+        clearRowList();
     }
 }

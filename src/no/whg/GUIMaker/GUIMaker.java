@@ -27,10 +27,10 @@ public class GUIMaker extends JFrame {
     }
 
     /**
-     * Creates the user interface
+     * Creates the user interface and sets it as visible
      */
     static void createUI (){
-        guim = new GFrame();
+        guim = new GFrame("GUIMaker");
         guim.setVisible(true);
     }
 }

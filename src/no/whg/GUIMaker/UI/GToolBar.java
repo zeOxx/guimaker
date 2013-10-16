@@ -24,7 +24,18 @@ public class GToolBar extends JToolBar {
      * Creates content for this toolbar
      */
     private void populateG(){
-        GButton MoveRowUpButton = new GButton("Move selected row up", 0);
-        this.add(MoveRowUpButton);
+        this.add(new GButton("New", 0));
+        this.add(new GButton("Load", 1));
+        this.add(new GButton("Save", 2));
+        this.addSeparator();
+        this.add(new GButton("Preferences", 3));
+        this.add(new GButton("Generate Java code", 4));
+        this.addSeparator();
+        this.add(new GButton("Create new row", 5));
+        this.add(new GButton("Move selected row up", 6));
+        this.add(new GButton("Move selected row down", 7));
+        this.addSeparator();
+        this.add(new GButton("Help", 8));
+
     }
 }

@@ -11,23 +11,21 @@ import java.awt.*;
  * To change this template use File | Settings | File Templates.
  */
 public class GFrame extends JFrame {
-    public GFrame (){
+    public GFrame (String tag){
         populateG();
-        setTitle("GUIMaker");
+        setTitle(tag);
         setSize(700, 400);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     private void populateG(){
-        // Menu bar
-        GMenuBar MainMenu = new GMenuBar();
-        GToolBar Toolbar = new GToolBar(false);
-
-        setJMenuBar(MainMenu);
-        add(Toolbar, BorderLayout.NORTH);
+        // Navigation bars
+        setJMenuBar(new GMenuBar());
+        add(new GToolBar(false), BorderLayout.NORTH);
 
         // Contents
+        /* TODO: Add table */
         //GTable Table = new GTable(new ComponentTable());
         //table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         //table.setFillsViewportHeight(true);

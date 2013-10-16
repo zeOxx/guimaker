@@ -16,7 +16,7 @@
     <file path="/FileChooser.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381928262635" ignored="false" />
     <file path="/GFrame.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381931846929" ignored="false" />
     <file path="/GWindowManager.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381932538130" ignored="false" />
-    <file path="/GTable.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381935166616" ignored="false" />
+    <file path="/GTable.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381936568992" ignored="false" />
     <file path="/GTableModel.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381936358681" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTable.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GTable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="8" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="274" selection-end="274" vertical-scroll-proportion="0.27293578">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,10 +127,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTableModel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GTableModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.3119266">
+            <state line="25" column="36" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -165,8 +165,8 @@
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GFrame.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GWindowManager.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java" />
       </list>
     </option>
   </component>
@@ -618,15 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="8" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="23" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
@@ -659,8 +650,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.3119266">
+        <state line="25" column="36" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="274" selection-end="274" vertical-scroll-proportion="0.27293578">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

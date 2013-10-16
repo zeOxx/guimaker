@@ -21,6 +21,7 @@ public class GTable extends JTable {
 
     /**
      * Populates the title array. Repopulate if language is changed
+     * THIS IS PROBABLY TEMP AS IT MOST LIKELY HAPPENS IN THE MODEL
      */
     private void populateTitles() {
         titles = new String[]   {Lang.getInstance().getString("type"), Lang.getInstance().getString("variable"), Lang.getInstance().getString("text"),
@@ -29,6 +30,6 @@ public class GTable extends JTable {
     }
 
     public void addItem() {
-        
+
     }
 }

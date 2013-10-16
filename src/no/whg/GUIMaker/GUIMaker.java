@@ -11,7 +11,7 @@ import javax.swing.*;
  * Time: 5:56 PM
  */
 public class GUIMaker extends JFrame {
-    static GFrame guim;
+    static GFrame GUIM;
 
     /**
      * Main
@@ -30,7 +30,7 @@ public class GUIMaker extends JFrame {
      * Creates the user interface and sets it as visible
      */
     static void createUI (){
-        guim = new GFrame("GUIMaker");
-        guim.setVisible(true);
+        GUIM = new GFrame("GUIMaker");
+        GUIM.setVisible(true);
     }
 }

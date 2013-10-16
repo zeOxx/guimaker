@@ -1,5 +1,7 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.UI.About.AboutFrame;
+
 import javax.swing.*;
 
 /**
@@ -14,6 +16,7 @@ public class GWindowManager {
     // Call Language.getInstance() to use it.
     private static GWindowManager instance = null;
     GFrame MainWindow;
+    AboutFrame AboutWindow;
 
     /**
      * Default constructor.
@@ -55,7 +58,8 @@ public class GWindowManager {
     public void createAndRunAboutWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                /* TODO: create and run about window */
+                AboutWindow = new AboutFrame("About GUIMaker");
+                AboutWindow.setVisible(true);
             }
         });
     }

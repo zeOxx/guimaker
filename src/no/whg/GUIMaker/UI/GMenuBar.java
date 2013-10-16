@@ -22,9 +22,8 @@ public class GMenuBar extends JMenuBar {
      * Creates content for this menubar
      */
     private void populateG(){
-        GMenu FileMenu = new GMenu("File", KeyEvent.VK_F, 0);
-        this.add(FileMenu);
-        GMenu HelpMenu = new GMenu("Help", KeyEvent.VK_H, 1);
-        this.add(HelpMenu);
+        this.add(new GMenu("File", KeyEvent.VK_F, 0));
+        this.add(new GMenu("Edit", KeyEvent.VK_E, 1));
+        this.add(new GMenu("Help", KeyEvent.VK_H, 2));
     }
 }

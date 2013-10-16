@@ -80,7 +80,7 @@ public class GButton extends JButton {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //
+                        GWindowManager.getInstance().createAndRunPreferencesWindow();
                     }
 
                 });

@@ -1,5 +1,7 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.Lang;
+
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 

@@ -1,29 +1,31 @@
-package no.whg.GUIMaker.lang;
+package no.whg.GUIMaker;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
  * Created with IntelliJ IDEA.
- * Package: no.whg.GUIMaker.lang
+ * Package: no.whg.GUIMaker
  * User: Inge
  * Date: 15.10.13
  * Time: 18:19
  */
 
-public class Language {
-    // This class is a singleton, meaning there can only be one instance of this class.
-    // Call Language.getInstance() to use it.
-    private static Language instance = null;
+public class Lang {
+    /**
+     * This class is a singleton, meaning there can only be one instance of this class.
+     * Call Language.getInstance() to use it.
+     */
+    private static Lang instance = null;
     private Locale currentLocale;
-    private ResourceBundle messages;
+    private ResourceBundle language;
 
     /**
      * Default constructor.
      * The default language is english(US).
      */
-    protected Language() {
-       currentLocale = new Locale("en", "US");
+    protected Lang() {
+        currentLocale = new Locale("en", "US");
         getBundle();
     }
 
@@ -32,9 +34,9 @@ public class Language {
      *
      * @return Returns the one instance of the class
      */
-    public static Language getInstance() {
+    public static Lang getInstance() {
         if (instance == null)
-            instance = new Language();
+            instance = new Lang();
 
         return instance;
     }
@@ -43,7 +45,7 @@ public class Language {
      * Creates a ResourceBundle based on currentLocale
      */
     private void getBundle() {
-        messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
+        language = ResourceBundle.getBundle("no.whg.GUIMaker.res.strings", currentLocale);
     }
 
     /**
@@ -53,7 +55,7 @@ public class Language {
      * @return The correct String based on currentLocale
      */
     public String getString(String value) {
-        return messages.getString(value);
+        return language.getString(value);
     }
 
     /**

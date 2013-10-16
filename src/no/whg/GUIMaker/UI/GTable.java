@@ -13,23 +13,4 @@ import javax.swing.*;
  */
 public class GTable extends JTable {
 
-    String[] titles;
-
-    public GTable() {
-        populateTitles();
-    }
-
-    /**
-     * Populates the title array. Repopulate if language is changed
-     * THIS IS PROBABLY TEMP AS IT MOST LIKELY HAPPENS IN THE MODEL
-     */
-    private void populateTitles() {
-        titles = new String[]   {Lang.getInstance().getString("type"), Lang.getInstance().getString("variable"), Lang.getInstance().getString("text"),
-                                Lang.getInstance().getString("row"), Lang.getInstance().getString("column"), Lang.getInstance().getString("rows"),
-                                Lang.getInstance().getString("columns"), Lang.getInstance().getString("fill"), Lang.getInstance().getString("anchor")};
-    }
-
-    public void addItem() {
-
-    }
 }

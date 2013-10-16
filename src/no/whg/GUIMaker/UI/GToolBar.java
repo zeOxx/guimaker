@@ -1,6 +1,9 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.GUIMaker;
+
 import javax.swing.*;
+import java.net.URL;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,9 +27,9 @@ public class GToolBar extends JToolBar {
      * Creates content for this toolbar
      */
     private void populateG(){
-        this.add(new GButton("New", 0));
-        this.add(new GButton("Load", 1));
-        this.add(new GButton("Save", 2));
+        this.add(new GButton("New (Ctrl + N)", 0));
+        this.add(new GButton("Load (Ctrl + L)", 1));
+        this.add(new GButton("Save (Ctrl + S)", 2));
         this.addSeparator();
         this.add(new GButton("Preferences", 3));
         this.add(new GButton("Generate Java code", 4));

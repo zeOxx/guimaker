@@ -1,5 +1,7 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.Lang;
+
 import javax.swing.*;
 
 /**
@@ -10,4 +12,5 @@ import javax.swing.*;
  * To change this template use File | Settings | File Templates.
  */
 public class GTable extends JTable {
+
 }

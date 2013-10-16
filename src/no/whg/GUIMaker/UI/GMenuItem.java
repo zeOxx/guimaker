@@ -110,7 +110,7 @@ public class GMenuItem extends JMenuItem {
             case 10: // Help/About
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //about();
+                        GWindowManager.getInstance().createAndRunAboutWindow();
                     }
                 });
                 break;

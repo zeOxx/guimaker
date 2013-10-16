@@ -1,5 +1,7 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.Lang;
+
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 
@@ -22,8 +24,8 @@ public class GMenuBar extends JMenuBar {
      * Creates content for this menubar
      */
     private void populateG(){
-        this.add(new GMenu("File", KeyEvent.VK_F, 0));
-        this.add(new GMenu("Edit", KeyEvent.VK_E, 1));
-        this.add(new GMenu("Help", KeyEvent.VK_H, 2));
+        this.add(new GMenu(Lang.getInstance().getString("file"), KeyEvent.VK_F, 0));
+        this.add(new GMenu(Lang.getInstance().getString("edit"), KeyEvent.VK_E, 1));
+        this.add(new GMenu(Lang.getInstance().getString("help"), KeyEvent.VK_H, 2));
     }
 }

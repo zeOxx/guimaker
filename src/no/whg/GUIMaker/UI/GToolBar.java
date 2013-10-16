@@ -10,7 +10,6 @@ import java.net.URL;
  * User: snorre
  * Date: 10/15/13
  * Time: 5:50 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GToolBar extends JToolBar {
     /**

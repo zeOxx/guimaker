@@ -12,7 +12,6 @@ import java.util.Locale;
  * User: snorre
  * Date: 10/16/13
  * Time: 4:02 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GWindowManager {
     // This class is a singleton, meaning there can only be one instance of this class.
@@ -42,6 +41,9 @@ public class GWindowManager {
         return instance;
     }
 
+    /**
+     * Creates and runs the main window
+     */
     public void createAndRunMainWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -51,6 +53,9 @@ public class GWindowManager {
         });
     }
 
+    /**
+     * Creates and runs the help window
+     */
     public void createAndRunHelpWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -59,6 +64,9 @@ public class GWindowManager {
         });
     }
 
+    /**
+     * Creates and runs the about window
+     */
     public void createAndRunAboutWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -68,6 +76,9 @@ public class GWindowManager {
         });
     }
 
+    /**
+     * Creates and runs the preferences dialog
+     */
     public void createAndRunPreferencesWindow(){
         PreferencesWindow = new PreferencesDialog(Lang.getInstance().getCurrentLocale());
         PreferencesWindow.showInputDialog(MainWindow);

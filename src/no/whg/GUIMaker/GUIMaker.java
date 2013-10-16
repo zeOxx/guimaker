@@ -5,7 +5,7 @@ import no.whg.GUIMaker.UI.GWindowManager;
 import javax.swing.*;
 
 /**
- * Created with IntelliJ IDEA for ${PROJECT_NAME}.
+ * Created with IntelliJ IDEA for guimaker.
  * User: snorre
  * Date: 9/24/13
  * Time: 5:56 PM

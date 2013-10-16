@@ -12,7 +12,6 @@ import java.util.Locale;
  * User: snorre
  * Date: 10/16/13
  * Time: 4:02 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GWindowManager {
     // This class is a singleton, meaning there can only be one instance of this class.

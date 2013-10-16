@@ -12,7 +12,6 @@ import java.awt.event.KeyEvent;
  * User: snorre
  * Date: 10/15/13
  * Time: 5:53 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GFrame extends JFrame {
     /**

@@ -7,7 +7,7 @@ import javax.swing.*;
 import static no.whg.GUIMaker.MyFileManager.getInstance;
 
 /**
- * Created with IntelliJ IDEA for ${PROJECT_NAME}
+ * Created with IntelliJ IDEA for guimaker
  * User: Snorre
  * Date: 10/2/13
  * Time: 4:58 PM

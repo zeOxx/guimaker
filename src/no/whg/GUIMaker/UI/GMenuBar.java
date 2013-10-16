@@ -16,7 +16,7 @@ public class GMenuBar extends JMenuBar {
     }
 
     private void populateG(){
-        GMenu FileMenu = new GMenu("File", KeyEvent.VK_F, 0);
+        GMenu FileMenu = new GMenu(no.whg.GUIMaker.lang.Language.getInstance().getString("File"), KeyEvent.VK_F, 0);
         this.add(FileMenu);
         GMenu HelpMenu = new GMenu("Help", KeyEvent.VK_H, 1);
         this.add(HelpMenu);

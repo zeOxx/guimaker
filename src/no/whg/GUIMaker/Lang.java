@@ -68,4 +68,12 @@ public class Lang {
         currentLocale = new Locale(language, country);
         getBundle();
     }
+
+    public Locale getCurrentLocale(){
+        return currentLocale;
+    }
+
+    public void setCurrentLocale(Locale l){
+        this.currentLocale = l;
+    }
 }

@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="032ffbea-6e8c-4c21-81da-beb19decd5a8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenu.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuBar.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuItem.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GToolBar.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GToolBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/no/whg/GUIMaker/MyFileManager.java" afterPath="$PROJECT_DIR$/src/no/whg/GUIMaker/MyFileManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="guimaker.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381858327729" ignored="false" />
+    <file path="/Dummy.txt" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381859531123" ignored="false" />
     <file path="/GUIMaker.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381859511556" ignored="false" />
     <file path="/Language.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381855475275" ignored="false" />
     <file path="/GMenuItem.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381859445872" ignored="false" />
@@ -82,15 +75,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GUIMaker.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java">
+      <file leaf-file-name="Button.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="33" selection-start="565" selection-end="565" vertical-scroll-proportion="0.8664323">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#414#514#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-              </folding>
+            <state line="12" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.35852373">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -515,12 +504,16 @@
       <created>1381858350882</created>
       <updated>1381858350882</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added a fuckton of javadoc">
+      <created>1381859541052</created>
+      <updated>1381859541052</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -586,7 +579,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="save/load dialogs now work with refactored code" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a fuckton of javadoc" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -602,6 +595,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="removed unused imports" />
     <MESSAGE value="save/load dialogs now work with refactored code" />
+    <MESSAGE value="added a fuckton of javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -611,17 +605,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="19" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#414#514#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -754,6 +737,13 @@
             <element signature="e#414#514#0" expanded="true" />
             <element signature="e#503#504#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.35852373">
+          <folding />
         </state>
       </provider>
     </entry>

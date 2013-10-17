@@ -183,21 +183,6 @@ public class GPanel extends JPanel{
     }
 
     /**
-     *
-     * @param row
-     */
-    public void highlightLastRow(int row) {
-        int lastrow = tableModel.getRowCount();
-
-        if (row == lastrow - 1)
-            table.setRowSelectionInterval(lastrow - 1, lastrow - 1);
-        else
-            table.setRowSelectionInterval(row + 1, row + 1);
-
-        table.setColumnSelectionInterval(0, 0);
-    }
-
-    /**
      * This is not an ordinary setter, as it does not have any parameters.
      * Use it before using GTableModel as well as when language is changed
      */
@@ -364,7 +349,7 @@ public class GPanel extends JPanel{
             }
             else {
                 setBackground(list.getBackground());
-                setBackground(list.getForeground());
+                setForeground(list.getForeground());
             }
 
             ImageIcon icon = anchorImages[selectedIndex];

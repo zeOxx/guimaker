@@ -110,7 +110,7 @@ public class GMenuItem extends JMenuItem implements Observer {
             case 9: // Help/Help
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //help();
+                        GWindowManager.getInstance().createAndRunHelpWindow();
                     }
                 });
                 break;

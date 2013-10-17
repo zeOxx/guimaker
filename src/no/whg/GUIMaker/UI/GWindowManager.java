@@ -1,5 +1,6 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.Element;
 import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.UI.About.AboutFrame;
 import no.whg.GUIMaker.UI.Help.HelpFrame;
@@ -85,5 +86,10 @@ public class GWindowManager {
     public void createAndRunPreferencesWindow(){
         PreferencesWindow = new PreferencesDialog(Lang.getInstance().getCurrentLocale());
         PreferencesWindow.showInputDialog(MainWindow);
+    }
+
+    public void createAndRunGPanelPreferencesDialog(Element e){
+        GDialog prefs = new GDialog(e);
+        prefs.showInputDialog(MainWindow);
     }
 }

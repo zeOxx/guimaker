@@ -177,4 +177,15 @@ public class GTableModel extends AbstractTableModel {
                 data.size() - 1,
                 data.size() - 1);
     }
+
+    public void deleteRow(int row) {
+        if (row >= 0 && row < getRowCount()) {
+            data.remove(row);
+            fireTableRowsDeleted(row, row);
+        }
+    }
+
+    public Vector getData() {
+        return data;
+    }
 }

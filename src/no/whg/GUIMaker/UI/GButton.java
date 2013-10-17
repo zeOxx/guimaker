@@ -99,7 +99,7 @@ public class GButton extends JButton implements Observer {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //
+                        GWindowManager.getInstance().MainWindow.getPanel().moveRowUp();
                     }
                 });
                 break;
@@ -108,7 +108,7 @@ public class GButton extends JButton implements Observer {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //
+                        GWindowManager.getInstance().MainWindow.getPanel().moveRowDown();
                     }
                 });
                 break;

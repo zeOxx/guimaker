@@ -2,7 +2,9 @@ package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.Element;
 
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+import java.awt.*;
 import java.util.Vector;
 
 /**
@@ -141,6 +143,10 @@ public class GTableModel extends AbstractTableModel {
             return columnNames[col];
     }
 
+    /**
+     *
+     * @return Returns wether the table has an empty row
+     */
     public boolean hasEmptyRow() {
         if (data.size() == 0)
             return false;

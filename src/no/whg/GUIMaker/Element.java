@@ -1,5 +1,8 @@
 package no.whg.GUIMaker;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * Created with IntelliJ IDEA.
  * Package: no.whg.GUIMaker

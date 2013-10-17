@@ -135,6 +135,9 @@ public class GPanel extends JPanel{
         anchorColumn.setCellEditor(new DefaultCellEditor(anchorBox));
     }
 
+    /**
+     * Sets size of the columns
+     */
     private void changeColumnSize() {
         TableColumn col = null;
 
@@ -217,6 +220,46 @@ public class GPanel extends JPanel{
      */
     public void addEmptyRow() {
         tableModel.addEmptyRow();
+    }
+
+    /**
+     * Moves the selected row up
+     */
+    public void moveRowUp() {
+        int row = table.getSelectedRow();
+
+        if (row > 0) {
+            System.out.println("COLS: " + table.getModel().getColumnCount() + " ROW1: " + row + " ROW2: " + (row - 1));
+
+            for (int col = 0; col < table.getModel().getColumnCount(); col++) {
+                Object o1 = table.getModel().getValueAt(row, col);
+                Object o2 = table.getModel().getValueAt(row - 1, col);
+                System.out.println("O1: " + o1 + " O2: " + o2);
+                table.getModel().setValueAt(o1, row - 1, col);
+                table.getModel().setValueAt(o2, row, col);
+            }
+        } else
+            Toolkit.getDefaultToolkit().beep();
+    }
+
+    /**
+     * Moves the selected row down
+     */
+    public void moveRowDown() {
+        int row = table.getSelectedRow();
+
+        System.out.println("Rowcount: " + table.getModel().getRowCount() + " Row: " + row);
+
+        if (row < table.getModel().getRowCount() - 1) {
+
+            for(int col = 0; col < table.getModel().getColumnCount(); col++) {
+                Object o1 = table.getModel().getValueAt(row, col);
+                Object o2 = table.getModel().getValueAt(row + 1, col);
+                table.getModel().setValueAt(o1, row + 1, col);
+                table.getModel().setValueAt(o2, row,  col);
+            }
+        } else
+            Toolkit.getDefaultToolkit().beep();
     }
 
     /**

@@ -5,6 +5,7 @@ import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.MyFileManager;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -89,7 +90,7 @@ public class GButton extends JButton implements Observer {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //
+                        GWindowManager.getInstance().MainWindow.getPanel().addEmptyRow();
                     }
                 });
                 break;

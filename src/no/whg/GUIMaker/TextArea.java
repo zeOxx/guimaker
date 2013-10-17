@@ -15,5 +15,7 @@ public class TextArea extends CoreElement {
      */
     public TextArea(int id) {
         super(id);
+
+        type = "TextArea";
     }
 }

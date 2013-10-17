@@ -14,7 +14,7 @@ import java.util.Vector;
  * Time: 17:10
  */
 public class GTableModel extends AbstractTableModel {
-    private String[] columnNames;
+    protected String[] columnNames;
     private Vector data;
 
     public GTableModel(String[] columnNames){
@@ -133,8 +133,8 @@ public class GTableModel extends AbstractTableModel {
      * @param col
      * @return Returns the name of the column
      */
-    public String columnName(int col) {
-        return columnNames[col];
+    public String getColumnName(int col) {
+            return columnNames[col];
     }
 
     public boolean hasEmptyRow() {

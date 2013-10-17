@@ -9,15 +9,15 @@ package no.whg.GUIMaker;
  */
 public class CoreElement {
 
-    private String type;
-    private String varName;
-    private String text;
-    private String x;
-    private String y;
-    private String column;
-    private String row;
-    private String fill;
-    private String anchor;
+    protected String type;
+    protected String varName;
+    protected String text;
+    protected String x;
+    protected String y;
+    protected String column;
+    protected String row;
+    protected String fill;
+    protected String anchor;
 
     public CoreElement(int id) {
         varName = "var" + String.valueOf(id);

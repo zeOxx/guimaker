@@ -10,14 +10,20 @@
     <file path="/GMenuItem.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381859445872" ignored="false" />
     <file path="/MyFileManager.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381928227093" ignored="false" />
     <file path="/GToolBar.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381935709309" ignored="false" />
-    <file path="/GButton.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381935807697" ignored="false" />
+    <file path="/GButton.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382014245234" ignored="false" />
     <file path="/GMenu.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381859233553" ignored="false" />
     <file path="/GMenuBar.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381859310093" ignored="false" />
     <file path="/FileChooser.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381928262635" ignored="false" />
-    <file path="/GFrame.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382011782259" ignored="false" />
-    <file path="/GWindowManager.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1381932538130" ignored="false" />
-    <file path="/GTableModel.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382011409898" ignored="false" />
-    <file path="/GTable.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382012078728" ignored="false" />
+    <file path="/GFrame.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382013889451" ignored="false" />
+    <file path="/GWindowManager.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382013418974" ignored="false" />
+    <file path="/GTableModel.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017237255" ignored="false" />
+    <file path="/GTable.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017497675" ignored="false" />
+    <file path="/GPanel.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017485774" ignored="false" />
+    <file path="/Button.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017742932" ignored="false" />
+    <file path="/CoreElement.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017757623" ignored="false" />
+    <file path="/Label.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017781222" ignored="false" />
+    <file path="/TextArea.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017794454" ignored="false" />
+    <file path="/TextField.java" changelist="032ffbea-6e8c-4c21-81da-beb19decd5a8" time="1382017808110" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +87,52 @@
       <file leaf-file-name="GTableModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="6" selection-start="3314" selection-end="3314" vertical-scroll-proportion="0.0">
+            <state line="22" column="5" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Button.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="24" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Label.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Label.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="23" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextArea.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextArea.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="26" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextField.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextField.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="27" selection-start="304" selection-end="304" vertical-scroll-proportion="0.5284974">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreElement.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/CoreElement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="4" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,16 +141,16 @@
       <file leaf-file-name="Lang.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Lang.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+            <state line="41" column="23" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTable.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java">
+      <file leaf-file-name="GPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="10" selection-start="800" selection-end="800" vertical-scroll-proportion="0.3956422">
+            <state line="73" column="155" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,8 +159,28 @@
       <file leaf-file-name="GFrame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.0">
+            <state line="103" column="0" selection-start="3722" selection-end="3722" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GButton.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="89" selection-start="3309" selection-end="3309" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2353#2570#0" expanded="true" />
+                <element signature="e#2551#2552#0" expanded="true" />
+                <element signature="e#3128#3349#0" expanded="true" />
+                <element signature="e#3330#3331#0" expanded="true" />
+                <element signature="e#3554#3712#0" expanded="true" />
+                <element signature="e#3693#3694#0" expanded="true" />
+                <element signature="e#3921#4079#0" expanded="true" />
+                <element signature="e#4060#4061#0" expanded="true" />
+                <element signature="e#4273#4431#0" expanded="true" />
+                <element signature="e#4412#4413#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,19 +203,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/lang/Language.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenu.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuBar.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuItem.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/MyFileManager.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/FileChooser.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/GUIMaker.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GWindowManager.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GToolBar.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java" />
-        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GFrame.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GWindowManager.java" />
         <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GFrame.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GPanel.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/CoreElement.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/Label.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/TextArea.java" />
+        <option value="$PROJECT_DIR$/src/no/whg/GUIMaker/TextField.java" />
       </list>
     </option>
   </component>
@@ -459,21 +533,21 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32844242" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16915688" sideWeight="0.6726862" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32719395" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16915688" sideWeight="0.6737194" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32628062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32844242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -547,41 +621,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="10" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GScrollPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/FileChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="55" selection-start="138" selection-end="150" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="39" selection-start="2968" selection-end="2968" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/MyFileManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="4" selection-start="530" selection-end="957" vertical-scroll-proportion="0.0">
@@ -603,20 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="69" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GToolBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="8" selection-start="507" selection-end="536" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="36" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0">
@@ -624,40 +649,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Lang.java">
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GToolBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="6" selection-start="3314" selection-end="3314" vertical-scroll-proportion="0.0">
+        <state line="29" column="43" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GWindowManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="51" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.80504584">
+        <state line="87" column="5" selection-start="2388" selection-end="2388" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1521#1648#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
+            <element signature="e#1908#2116#0" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="89" selection-start="3309" selection-end="3309" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2353#2570#0" expanded="true" />
+            <element signature="e#2551#2552#0" expanded="true" />
+            <element signature="e#3128#3349#0" expanded="true" />
+            <element signature="e#3330#3331#0" expanded="true" />
+            <element signature="e#3554#3712#0" expanded="true" />
+            <element signature="e#3693#3694#0" expanded="true" />
+            <element signature="e#3921#4079#0" expanded="true" />
+            <element signature="e#4060#4061#0" expanded="true" />
+            <element signature="e#4273#4431#0" expanded="true" />
+            <element signature="e#4412#4413#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.0">
+        <state line="103" column="0" selection-start="3722" selection-end="3722" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTable.java">
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="10" selection-start="800" selection-end="800" vertical-scroll-proportion="0.3956422">
+        <state line="73" column="155" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Lang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="23" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/UI/GTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="5" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/CoreElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="24" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/Label.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="23" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="26" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/whg/GUIMaker/TextField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="304" selection-end="304" vertical-scroll-proportion="0.5284974">
           <folding />
         </state>
       </provider>

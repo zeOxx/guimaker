@@ -14,6 +14,8 @@ import java.awt.event.KeyEvent;
  * Time: 5:53 PM
  */
 public class GFrame extends JFrame {
+    private GPanel panel;
+
     /**
      * KeyEventDispatcher to handle global key bindings
      */
@@ -89,19 +91,26 @@ public class GFrame extends JFrame {
         setJMenuBar(new GMenuBar());
         add(new GToolBar(false), BorderLayout.NORTH);
 
+        panel = new GPanel(700, 300);
+        this.getContentPane().add(panel);
 
 
         // Contents
-        /* TODO: Add table */
-        //GTable Table = new GTable(new ComponentTable());
-        //table.setPreferredScrollableViewportSize(new Dimension(500, 70));
-        //table.setFillsViewportHeight(true);
-        //table.getModel().addTableModelListener(table);
+        /* TODO: Add panel */
+        //GPanel Table = new GPanel(new ComponentTable());
+        //panel.setPreferredScrollableViewportSize(new Dimension(500, 70));
+        //panel.setFillsViewportHeight(true);
+        //panel.getModel().addTableModelListener(panel);
 
-        //Create the scroll pane and add the table to it.
-        //JScrollPane scrollPane = new JScrollPane(table);
+        //Create the scroll pane and add the panel to it.
+        //JScrollPane scrollPane = new JScrollPane(panel);
 
         //Add the scroll pane to this panel.
         //add(scrollPane);
     }
+
+    public GPanel getPanel() {
+        return panel;
+    }
+
 }

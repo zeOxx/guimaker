@@ -2,6 +2,7 @@ package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.UI.About.AboutFrame;
+import no.whg.GUIMaker.UI.Help.HelpFrame;
 import no.whg.GUIMaker.UI.Preferences.PreferencesDialog;
 
 import javax.swing.*;
@@ -19,6 +20,7 @@ public class GWindowManager {
     private static GWindowManager instance = null;
     GFrame MainWindow;
     AboutFrame AboutWindow;
+    HelpFrame HelpWindow;
     PreferencesDialog PreferencesWindow;
 
     /**
@@ -59,7 +61,8 @@ public class GWindowManager {
     public void createAndRunHelpWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                /* TODO: create and run help window */
+                HelpWindow = new HelpFrame("titlehelp");
+                HelpWindow.setVisible(true);
             }
         });
     }

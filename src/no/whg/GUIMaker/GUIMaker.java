@@ -10,7 +10,7 @@ import no.whg.GUIMaker.UI.GWindowManager;
  */
 public class GUIMaker {
     /**
-     * main tells GWindowmanager to create the main window.
+     * main tells GWindowManager to create the main window.
      *
      * @param args Command line arguments
      */

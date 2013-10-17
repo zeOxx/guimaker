@@ -1,6 +1,6 @@
 package no.whg.GUIMaker.UI;
 
-import no.whg.GUIMaker.CoreElement;
+import no.whg.GUIMaker.Element;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.Vector;
@@ -16,6 +16,10 @@ public class GTableModel extends AbstractTableModel {
     protected String[] columnNames;
     private Vector data;
 
+    /**
+     * Constructor
+     * @param columnNames Names of the individual columns
+     */
     public GTableModel(String[] columnNames){
         this.columnNames = columnNames;
         data = new Vector();
@@ -23,7 +27,7 @@ public class GTableModel extends AbstractTableModel {
 
     /**
      *
-     * @return
+     * @return Returns the amount of columns
      */
     public int getColumnCount(){
         return columnNames.length;
@@ -31,7 +35,7 @@ public class GTableModel extends AbstractTableModel {
 
     /**
      *
-     * @return
+     * @return Returns the amount of rows
      */
     public int getRowCount(){
         return data.size();
@@ -57,7 +61,7 @@ public class GTableModel extends AbstractTableModel {
      * @return Returns the value of a desired cell
      */
     public Object getValueAt(int row, int column) {
-        CoreElement element = (CoreElement)data.get(row);
+        Element element = (Element)data.get(row);
         switch (column) {
             case 0:
                 return element.getType();
@@ -89,8 +93,9 @@ public class GTableModel extends AbstractTableModel {
      * @param row
      * @param column
      */
+    @Override
     public void setValueAt(Object value, int row, int column) {
-        CoreElement element = (CoreElement)data.get(row);
+        Element element = (Element)data.get(row);
         switch (column) {
             case 0:
                 element.setType((String)value);
@@ -140,7 +145,7 @@ public class GTableModel extends AbstractTableModel {
         if (data.size() == 0)
             return false;
 
-        CoreElement element = (CoreElement)data.get(data.size() - 1);
+        Element element = (Element)data.get(data.size() - 1);
 
         if (element.getType().trim().equals("") &&
             element.getVarName().trim().equals("") &&
@@ -161,7 +166,7 @@ public class GTableModel extends AbstractTableModel {
      * Adds an empty row
      */
     public void addEmptyRow() {
-        data.add(new CoreElement(data.size()));
+        data.add(new Element(data.size()));
         fireTableRowsInserted(
                 data.size() - 1,
                 data.size() - 1);

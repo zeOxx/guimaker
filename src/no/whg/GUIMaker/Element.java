@@ -7,8 +7,9 @@ package no.whg.GUIMaker;
  * Date: 10.10.13
  * Time: 17:47
  */
-public class CoreElement {
+public class Element {
 
+    public static String[] types = { "JLabel", "JButton", "JTextField", "JTextArea", "JCheckBox", "JList", "JComboBox", "JSpinnerList", "JSpinnerNumber"};
     protected String type;
     protected String varName;
     protected String text;
@@ -19,9 +20,9 @@ public class CoreElement {
     protected String fill;
     protected String anchor;
 
-    public CoreElement(int id) {
+    public Element(int id) {
         varName = "var" + String.valueOf(id);
-        type = "default";
+        type = types[0];
         text = "";
         x = "0";
         y = "0";

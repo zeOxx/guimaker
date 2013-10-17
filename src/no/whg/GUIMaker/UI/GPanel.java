@@ -1,5 +1,6 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.Element;
 import no.whg.GUIMaker.Lang;
 
 import javax.swing.*;
@@ -59,12 +60,18 @@ public class GPanel extends JPanel{
         TableColumn typeColumn = table.getColumnModel().getColumn(0);
         JComboBox typeBox = new JComboBox();
         typeBox.setName("typeBox");
-        typeBox.addItem("JLabel");
-        typeBox.addItem("JButton");
-        typeBox.addItem("JTextArea");
-        typeBox.addItem("JTextField");
-        typeBox.addActionListener(new comboBoxListener());
+
+        // Adds all types
+        for (int i = 0; i < Element.types.length; i++)
+            typeBox.addItem(Element.types[i]);
+
         typeColumn.setCellEditor(new DefaultCellEditor(typeBox));
+
+        TableColumn fillColumn = table.getColumnModel().getColumn(7);
+        JComboBox fillBox = new JComboBox();
+        fillBox.setName("fillBox");
+
+        
     }
 
     /**
@@ -121,17 +128,5 @@ public class GPanel extends JPanel{
      */
     public void addEmptyRow() {
         tableModel.addEmptyRow();
-    }
-
-    private class comboBoxListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JComboBox cb = (JComboBox)e.getSource();
-
-            if (cb.getName().equals("typeBox")) {
-
-            }
-        }
     }
 }

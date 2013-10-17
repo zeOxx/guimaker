@@ -16,6 +16,6 @@ public class TextField extends CoreElement {
     public TextField(int id) {
         super(id);
 
-        type = "TextField";
+        type = "JTextField";
     }
 }

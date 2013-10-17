@@ -5,6 +5,7 @@ import no.whg.GUIMaker.Lang;
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 
 /**
@@ -51,8 +52,21 @@ public class GPanel extends JPanel{
 
         setLayout(new BorderLayout());
         add(scroller, BorderLayout.CENTER);
+
+        // Add a combobox to the first column, letting the user choose the type of the element
+        TableColumn typeColumn = table.getColumnModel().getColumn(0);
+        JComboBox typeBox = new JComboBox();
+        typeBox.addItem("JLabel");
+        typeBox.addItem("JButton");
+        typeBox.addItem("JTextArea");
+        typeBox.addItem("JTextField");
+        typeColumn.setCellEditor(new DefaultCellEditor(typeBox));
     }
 
+    /**
+     *
+     * @param row
+     */
     public void highlightLastRow(int row) {
         int lastrow = tableModel.getRowCount();
 

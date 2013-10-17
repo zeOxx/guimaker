@@ -17,6 +17,6 @@ public class Button extends CoreElement {
     public Button(int id) {
         super(id);
 
-        type = "Button";
+        type = "JButton";
     }
 }

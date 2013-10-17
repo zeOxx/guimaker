@@ -16,6 +16,6 @@ public class Label extends CoreElement {
     public Label(int id) {
         super(id);
 
-        type = "Label";
+        type = "JLabel";
     }
 }

@@ -1,6 +1,7 @@
 package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.elements.CoreElement;
+import no.whg.GUIMaker.elements.Label;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.Vector;
@@ -161,7 +162,7 @@ public class GTableModel extends AbstractTableModel {
      * Adds an empty row
      */
     public void addEmptyRow() {
-        data.add(new CoreElement(data.size()));
+        data.add(new Label(data.size()));
         fireTableRowsInserted(
                 data.size() - 1,
                 data.size() - 1);

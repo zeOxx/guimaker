@@ -64,17 +64,6 @@ public class Lang extends Observable {
     }
 
     /**
-     * Allows the user to change the language in runtime
-     *
-     * @param language The language
-     * @param country The country of the program's language
-     */
-    public void changeLanguage(String language, String country) {
-        currentLocale = new Locale(language, country);
-        getBundle();
-    }
-
-    /**
      * Gets the current locale
      *
      * @return currentLocale

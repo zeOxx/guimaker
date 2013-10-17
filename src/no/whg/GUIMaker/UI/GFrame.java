@@ -21,25 +21,46 @@ public class GFrame extends JFrame {
         @Override
         public boolean dispatchKeyEvent(KeyEvent e) {
             if (e.getID() == KeyEvent.KEY_PRESSED) {
-                // New
-                if ((e.getKeyCode() == KeyEvent.VK_N)){
-                    if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
-                        MyFileManager.getInstance().newGUI();
+                if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
+                    switch (e.getKeyCode()){
+                        case KeyEvent.VK_N:
+                            MyFileManager.getInstance().newGUI();
+                            break;
+                        case KeyEvent.VK_L:
+                            MyFileManager.getInstance().loadGUI();
+                            break;
+                        case KeyEvent.VK_S:
+                            MyFileManager.getInstance().saveGUI(false);
+                            break;
+                        case KeyEvent.VK_P:
+                            GWindowManager.getInstance().createAndRunPreferencesWindow();
+                            break;
+                        case KeyEvent.VK_G:
+                            /* TODO: Actually generate something with some function that can be called here */
+                            break;
+                        case KeyEvent.VK_R:
+                            /* TODO: Create new row */
+                            System.out.println("Ctrl+'R'");
+                            break;
+                        // These two buttons have the same functionality (+)
+                        case KeyEvent.VK_ADD:
+                        case KeyEvent.VK_PLUS:
+                            /* TODO: Move row up */
+                            System.out.println("Ctrl+'+'");
+                            break;
+                        // These two buttons have the same functionality (-)
+                        case KeyEvent.VK_SUBTRACT:
+                        case KeyEvent.VK_MINUS:
+                            /* TODO: Move row down */
+                            System.out.println("Ctrl+'-'");
+                            break;
+                        case KeyEvent.VK_H:
+                            GWindowManager.getInstance().createAndRunHelpWindow();
+                            break;
+                        default:
+                            break;
                     }
                 }
-                // Load
-                else if ((e.getKeyCode() == KeyEvent.VK_L)){
-                    if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
-                        MyFileManager.getInstance().loadGUI();
-                    }
-                }
-                // Save
-                else if ((e.getKeyCode() == KeyEvent.VK_S)){
-                    if ((e.getModifiers() & ActionEvent.CTRL_MASK) == ActionEvent.CTRL_MASK) {
-                        MyFileManager.getInstance().saveGUI(false);
-                    }
-                }
-                /* TODO: Add the rest of the keyboard shortcuts */
             }
             return false;
         }

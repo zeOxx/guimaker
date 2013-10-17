@@ -14,10 +14,13 @@ import java.util.Vector;
  * Time: 17:10
  */
 public class GTableModel extends AbstractTableModel {
-    private String[] columnNames = {Lang.getInstance().getString("type"), Lang.getInstance().getString("variable"), Lang.getInstance().getString("text"),
-                                    Lang.getInstance().getString("row"), Lang.getInstance().getString("column"), Lang.getInstance().getString("rows"),
-                                    Lang.getInstance().getString("columns"), Lang.getInstance().getString("fill"), Lang.getInstance().getString("anchor")};
+    private String[] columnNames;
     private Vector data;
+
+    public GTableModel(String[] columnNames){
+        this.columnNames = columnNames;
+        data = new Vector();
+    }
 
     /**
      *
@@ -132,6 +135,27 @@ public class GTableModel extends AbstractTableModel {
      */
     public String columnName(int col) {
         return columnNames[col];
+    }
+
+    public boolean hasEmptyRow() {
+        if (data.size() == 0)
+            return false;
+
+        CoreElement element = (CoreElement)data.get(data.size() - 1);
+
+        if (element.getType().trim().equals("") &&
+            element.getVarName().trim().equals("") &&
+            element.getText().trim().equals("") &&
+            element.getRow().trim().equals("") &&
+            element.getColumn().trim().equals("") &&
+            element.getX().trim().equals("") &&
+            element.getY().trim().equals("") &&
+            element.getFill().trim().equals("") &&
+            element.getAnchor().trim().equals(""))
+        {
+            return true;
+        }
+        else return false;
     }
 
     /**

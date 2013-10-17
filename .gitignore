@@ -1,5 +1,5 @@
-.idea/workspace.xml
-workspace.xml.orig
+*workspace.xml
+*workspace.xml.orig
 out/*
 *.class
 *.orig

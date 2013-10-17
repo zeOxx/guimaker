@@ -68,6 +68,8 @@ public class GFrame extends JFrame {
         setJMenuBar(new GMenuBar());
         add(new GToolBar(false), BorderLayout.NORTH);
 
+
+
         // Contents
         /* TODO: Add table */
         //GTable Table = new GTable(new ComponentTable());

@@ -1,21 +1,21 @@
-package no.whg.GUIMaker;
+package no.whg.GUIMaker.elements;
 
 /**
  * Created with IntelliJ IDEA.
  * Package: no.whg.GUIMaker
  * User: Inge
  * Date: 24.09.13
- * Time: 19:26
+ * Time: 19:15
  */
-public class TextField extends CoreElement {
+public class Label extends CoreElement {
 
     /**
      *
      * @param id
      */
-    public TextField(int id) {
+    public Label(int id) {
         super(id);
 
-        type = "TextField";
+        type = "Label";
     }
 }

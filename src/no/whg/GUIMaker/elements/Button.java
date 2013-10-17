@@ -1,21 +1,22 @@
-package no.whg.GUIMaker;
+package no.whg.GUIMaker.elements;
 
 /**
  * Created with IntelliJ IDEA.
  * Package: no.whg.GUIMaker
  * User: Inge
  * Date: 24.09.13
- * Time: 19:26
+ * Time: 19:38
  */
-public class TextArea extends CoreElement {
+
+public class Button extends CoreElement {
 
     /**
      *
      * @param id
      */
-    public TextArea(int id) {
+    public Button(int id) {
         super(id);
 
-        type = "TextArea";
+        type = "Button";
     }
 }

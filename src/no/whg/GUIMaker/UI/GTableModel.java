@@ -1,7 +1,6 @@
 package no.whg.GUIMaker.UI;
 
-import no.whg.GUIMaker.CoreElement;
-import no.whg.GUIMaker.Lang;
+import no.whg.GUIMaker.elements.CoreElement;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.Vector;

@@ -12,7 +12,6 @@ import java.awt.event.KeyEvent;
  * User: snorre
  * Date: 10/15/13
  * Time: 5:53 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GFrame extends JFrame {
     /**
@@ -40,11 +39,17 @@ public class GFrame extends JFrame {
                         MyFileManager.getInstance().saveGUI(false);
                     }
                 }
+                /* TODO: Add the rest of the keyboard shortcuts */
             }
             return false;
         }
     }
 
+    /**
+     * Constructor for GFrame
+     *
+     * @param tag The title of this GFrame
+     */
     public GFrame (String tag){
         populateG();
         setTitle(tag);
@@ -55,6 +60,9 @@ public class GFrame extends JFrame {
         manager.addKeyEventDispatcher(new MyDispatcher());
     }
 
+    /**
+     * Adds content to this GFrame
+     */
     private void populateG(){
         // Navigation bars
         setJMenuBar(new GMenuBar());

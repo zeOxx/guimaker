@@ -1,6 +1,7 @@
 package no.whg.GUIMaker;
 
 import java.util.Locale;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
 /**
@@ -11,10 +12,12 @@ import java.util.ResourceBundle;
  * Time: 18:19
  */
 
-public class Lang {
+public class Lang extends Observable {
     /**
      * This class is a singleton, meaning there can only be one instance of this class.
      * Call Language.getInstance() to use it.
+     * This class extends Observable.
+     * Use of setCurrentLocale() may be observed by a class that implements Observer.
      */
     private static Lang instance = null;
     private Locale currentLocale;
@@ -23,6 +26,8 @@ public class Lang {
     /**
      * Default constructor.
      * The default language is english(US).
+     *
+     * TODO: Remember the user's choice of language.
      */
     protected Lang() {
         currentLocale = new Locale("en", "US");
@@ -67,5 +72,29 @@ public class Lang {
     public void changeLanguage(String language, String country) {
         currentLocale = new Locale(language, country);
         getBundle();
+    }
+
+    /**
+     * Gets the current locale
+     *
+     * @return currentLocale
+     */
+    public Locale getCurrentLocale(){
+        return currentLocale;
+    }
+
+    /**
+     * Sets the current locale, and informs observers of the change.
+     *
+     * @param l the new locale
+     */
+    public void setCurrentLocale(Locale l){
+        if (l != this.currentLocale){
+            this.currentLocale = l;
+            getBundle();
+            setChanged();
+            notifyObservers();
+            System.out.println("set");
+        }
     }
 }

@@ -1,40 +1,34 @@
 package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.GUIMaker;
+import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.MyFileManager;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created with IntelliJ IDEA.
  * User: snorre
  * Date: 10/15/13
  * Time: 5:51 PM
- * To change this template use File | Settings | File Templates.
  */
-public class GButton extends JButton {
+public class GButton extends JButton implements Observer {
     ImageIcon icon;
+    String key;
     /**
      * Constructor for GButton
      *
-     * @param tooltip The tooltip for this button
+     * @param key The tooltip for this button
      * @param type The type of button to create
      */
-    public GButton(String tooltip, int type){
-        this.setToolTipText(tooltip);
-        populateG(type);
-    }
-
-    public GButton(String tooltip, ImageIcon i, int type){
-        super(i);
-        this.setToolTipText(tooltip);
+    public GButton(String key, int type){
+        this.key = key;
+        this.setToolTipText(Lang.getInstance().getString(key));
+        observe(Lang.getInstance());
         populateG(type);
     }
 
@@ -52,7 +46,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().newGUI();
                     }
-
                 });
                 break;
             case 1: // Load
@@ -62,7 +55,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().loadGUI();
                     }
-
                 });
                 break;
             case 2: // Save
@@ -72,7 +64,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().saveGUI(false);
                     }
-
                 });
                 break;
             case 3: // Preferences
@@ -80,9 +71,8 @@ public class GButton extends JButton {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //
+                        GWindowManager.getInstance().createAndRunPreferencesWindow();
                     }
-
                 });
                 break;
             case 4: //Generate
@@ -92,7 +82,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 5: // New row
@@ -102,7 +91,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 6: // Move row up
@@ -112,7 +100,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 7: // Move row down
@@ -122,7 +109,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 8: // Help
@@ -132,7 +118,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             default:
@@ -141,13 +126,39 @@ public class GButton extends JButton {
         }
     }
 
+    /**
+     * Creates an icon
+     *
+     * @param path Where the source image is located
+     * @return The icon
+     */
     protected ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = GUIMaker.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
-            System.err.println("Couldn't find file: " + path);
+            System.err.println(Lang.getInstance().getString("filenotfound") + ": " + path);
             return null;
         }
+    }
+
+    /**
+     * Starts observing an Observable
+     *
+     * @param o The Observable to observe
+     */
+    public void observe(Observable o) {
+        o.addObserver(this);
+    }
+
+    /**
+     * Called when notified by the observable. Updates content to reflect the change
+     *
+     * @param o The Observable being observed
+     * @param arg The argument passed to the observer
+     */
+    @Override
+    public void update(Observable o, Object arg) {
+        this.setToolTipText(Lang.getInstance().getString(key));
     }
 }

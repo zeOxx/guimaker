@@ -10,7 +10,6 @@ import java.awt.event.KeyEvent;
  * User: snorre
  * Date: 10/15/13
  * Time: 5:48 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GMenuBar extends JMenuBar {
     /**
@@ -24,8 +23,8 @@ public class GMenuBar extends JMenuBar {
      * Creates content for this menubar
      */
     private void populateG(){
-        this.add(new GMenu(Lang.getInstance().getString("file"), KeyEvent.VK_F, 0));
-        this.add(new GMenu(Lang.getInstance().getString("edit"), KeyEvent.VK_E, 1));
-        this.add(new GMenu(Lang.getInstance().getString("help"), KeyEvent.VK_H, 2));
+        this.add(new GMenu("file", KeyEvent.VK_F, 0));
+        this.add(new GMenu("edit", KeyEvent.VK_E, 1));
+        this.add(new GMenu("help", KeyEvent.VK_H, 2));
     }
 }

@@ -1,7 +1,5 @@
 package no.whg.GUIMaker;
 
-import javax.swing.JTextField;
-
 /**
  * Created with IntelliJ IDEA.
  * Package: no.whg.GUIMaker

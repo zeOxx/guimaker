@@ -227,7 +227,9 @@ public class GPanel extends JPanel{
         tableModel.deleteRow(row);
     }
 
-
+    public JTable getTable() {
+        return table;
+    }
 
     /**
      * Moves the selected row up

@@ -1,4 +1,4 @@
-package no.whg.GUIMaker.elements;
+package no.whg.GUIMaker;
 
 /**
  * Created with IntelliJ IDEA.

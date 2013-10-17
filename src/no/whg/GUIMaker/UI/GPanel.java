@@ -7,6 +7,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -56,10 +58,12 @@ public class GPanel extends JPanel{
         // Add a combobox to the first column, letting the user choose the type of the element
         TableColumn typeColumn = table.getColumnModel().getColumn(0);
         JComboBox typeBox = new JComboBox();
+        typeBox.setName("typeBox");
         typeBox.addItem("JLabel");
         typeBox.addItem("JButton");
         typeBox.addItem("JTextArea");
         typeBox.addItem("JTextField");
+        typeBox.addActionListener(new comboBoxListener());
         typeColumn.setCellEditor(new DefaultCellEditor(typeBox));
     }
 
@@ -117,5 +121,17 @@ public class GPanel extends JPanel{
      */
     public void addEmptyRow() {
         tableModel.addEmptyRow();
+    }
+
+    private class comboBoxListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JComboBox cb = (JComboBox)e.getSource();
+
+            if (cb.getName().equals("typeBox")) {
+
+            }
+        }
     }
 }

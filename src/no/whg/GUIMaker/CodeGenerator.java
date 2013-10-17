@@ -13,6 +13,8 @@ public class CodeGenerator {
     // This class is a singleton, meaning there can only be one instance of this class.
     // Call GWindowManager.getInstance() to use it.
     private static CodeGenerator instance = null;
+    private String block_first = "";
+    private String block_last = "";
     /**
      * Default constructor.
      * Exists only to defeat instantiation.
@@ -36,8 +38,10 @@ public class CodeGenerator {
         String theFile = "";
         String temp;
         Vector<Element> elements = v;
+        /* TODO: Assemble the start of the file here. */
         for (int i = 0; i < elements.size(); i++){
             boolean elementLoaded = false;
+            temp = "";
             Element e = elements.get(i);
             String type = e.type;
             int j;
@@ -49,9 +53,10 @@ public class CodeGenerator {
                 }
             }
             if (elementLoaded){
-                // Do something to string temp
+                theFile = theFile + temp;
             }
         }
+        /* TODO: Assemble the end of the file here */
         MyFileManager.getInstance().writeJava(theFile);
     }
 

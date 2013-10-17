@@ -26,7 +26,7 @@ public class FileChooser {
     /**
      * Opens a window where the user may load an ArrayList from file, and loads the selected file into an Arraylist
      *
-     * TODO: Confirmation dialog, exception handling
+     * TODO: Confirmation dialog
      *
      * @return An ArrayList, unless there is a failure, which will return null
      */
@@ -44,14 +44,14 @@ public class FileChooser {
                 fis.close();
                 return re;
             } catch (IOException e) {
-                /* TODO: Exception handling */
+                System.out.println("IOException: " + e);
                 return null;
             } catch (ClassNotFoundException e) {
-                /* TODO: Exception handling */
+                System.out.println("ClassNotFoundException: " + e);
                 return null;
             }
         } else {
-            /* TODO: Error message */
+            System.out.println("Invalid option.");
         }
         return null;
     }
@@ -59,7 +59,7 @@ public class FileChooser {
     /**
      * Opens a window where the user may save an ArrayList to file
      *
-     * TODO: Confirmation dialog, exception handling
+     * TODO: Confirmation dialog
      *
      * @param re The ArrayList to save
      */
@@ -76,17 +76,17 @@ public class FileChooser {
                 getInstance().setLastFile(file);
                 /* TODO: "file has been saved" dialog */
             } catch (IOException e) {
-                /* TODO: Exception handling */
+                System.out.println("IOException: " + e);
             }
         } else {
-            /* TODO: Error message */
+            System.out.println("Invalid option.");
         }
     }
 
     /**
      * Saves an ArrayList to file at a previously used location
      *
-     * TODO: Confirmation dialog, exception handling
+     * TODO: Confirmation dialog
      *
      * @param re The ArrayList to save
      * @param lastFile The previously used location
@@ -100,7 +100,7 @@ public class FileChooser {
             fos.close();
             /* TODO: "file has been saved" dialog */
         } catch (IOException e) {
-            /* TODO: Exception handling */
+            System.out.println("IOException: " + e);
         }
     }
 }

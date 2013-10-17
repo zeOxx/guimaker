@@ -143,6 +143,5 @@ public class MyFileManager {
 
     public void writeJava(String java){
         //PrintWriter out = new PrintWriter("filename.txt");
-
     }
 }

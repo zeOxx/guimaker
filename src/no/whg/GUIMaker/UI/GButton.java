@@ -122,7 +122,7 @@ public class GButton extends JButton implements Observer {
                 });
                 break;
             default:
-                /* TODO: Error message(s) */
+                System.out.println("Invalid button type.");
                 break;
         }
     }

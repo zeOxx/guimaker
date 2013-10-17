@@ -62,7 +62,7 @@ public class GMenu extends JMenu implements Observer {
                 this.add(new GMenuItem("about", KeyEvent.VK_A, "aboutlong", 10));
                 break;
             default:
-                /* TODO: Error message(s) */
+                System.out.println("Menu type is invalid");
                 break;
         }
     }

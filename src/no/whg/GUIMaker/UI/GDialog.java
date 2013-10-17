@@ -10,7 +10,6 @@ import javax.swing.*;
  * User: snorre
  * Date: 10/17/13
  * Time: 6:07 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GDialog extends JOptionPane {
     Element element;

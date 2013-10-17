@@ -1,6 +1,9 @@
 package no.whg.GUIMaker;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Locale;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
 /**
@@ -11,7 +14,7 @@ import java.util.ResourceBundle;
  * Time: 18:19
  */
 
-public class Lang {
+public class Lang extends Observable {
     /**
      * This class is a singleton, meaning there can only be one instance of this class.
      * Call Language.getInstance() to use it.
@@ -84,7 +87,12 @@ public class Lang {
      * @param l the new locale
      */
     public void setCurrentLocale(Locale l){
-        this.currentLocale = l;
-        getBundle();
+        if (l != this.currentLocale){
+            this.currentLocale = l;
+            getBundle();
+            setChanged();
+            notifyObservers();
+            System.out.println("set");
+        }
     }
 }

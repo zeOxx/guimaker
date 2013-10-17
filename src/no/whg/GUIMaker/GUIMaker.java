@@ -10,7 +10,7 @@ import javax.swing.*;
  * Date: 9/24/13
  * Time: 5:56 PM
  */
-public class GUIMaker extends JFrame {
+public class GUIMaker {
     /**
      * Main
      *

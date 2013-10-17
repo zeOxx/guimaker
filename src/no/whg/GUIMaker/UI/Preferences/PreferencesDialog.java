@@ -21,16 +21,16 @@ public class PreferencesDialog extends JOptionPane {
     public void showInputDialog(GFrame parent){
         String temp = currentLocale.getCountry();
         if (temp.equals("US")){
-            temp = "English (US)";
+            temp = Lang.getInstance().getString("en_US");
         } else if (temp.equals("NO")){
-            temp = "Norwegian Bokmål";
+            temp = Lang.getInstance().getString("nb_NO");
         } else { return; }
 
-        Object[] possibilities = {"English (US)", "Norwegian Bokmål"};
+        Object[] possibilities = {Lang.getInstance().getString("en_US"), Lang.getInstance().getString("nb_NO")};
         String s = (String)super.showInputDialog(
                 parent,
-                "Language:\n",
-                "Preferences",
+                Lang.getInstance().getString("language") + ":\n",
+                Lang.getInstance().getString("titlepreferences"),
                 JOptionPane.PLAIN_MESSAGE,
                 null,
                 possibilities,
@@ -38,10 +38,10 @@ public class PreferencesDialog extends JOptionPane {
         //If a string was returned, say so.
         if ((s != null) && (s.length() > 0)) {
             Locale l;
-            if (s.equals("English (US)")){
+            if (s.equals(Lang.getInstance().getString("en_US"))){
                 l = new Locale("en", "US");
                 Lang.getInstance().setCurrentLocale(l);
-            } else if (s.equals("Norwegian Bokmål")){
+            } else if (s.equals(Lang.getInstance().getString("nb_NO"))){
                 l = new Locale ("nb", "NO");
                 Lang.getInstance().setCurrentLocale(l);
             }

@@ -1,6 +1,7 @@
 package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.GUIMaker;
+import no.whg.GUIMaker.Lang;
 
 import javax.swing.*;
 import java.net.URL;
@@ -26,18 +27,17 @@ public class GToolBar extends JToolBar {
      * Creates content for this toolbar
      */
     private void populateG(){
-        this.add(new GButton("New (Ctrl + N)", 0));
-        this.add(new GButton("Load (Ctrl + L)", 1));
-        this.add(new GButton("Save (Ctrl + S)", 2));
+        this.add(new GButton("newtip", 0));
+        this.add(new GButton("loadtip", 1));
+        this.add(new GButton("savetip", 2));
         this.addSeparator();
-        this.add(new GButton("Preferences", 3));
-        this.add(new GButton("Generate Java code", 4));
+        this.add(new GButton("preferencestip", 3));
+        this.add(new GButton("generatetip", 4));
         this.addSeparator();
-        this.add(new GButton("Create new row", 5));
-        this.add(new GButton("Move selected row up", 6));
-        this.add(new GButton("Move selected row down", 7));
+        this.add(new GButton("newrowtip", 5));
+        this.add(new GButton("moverowuptip", 6));
+        this.add(new GButton("moverowdowntip", 7));
         this.addSeparator();
-        this.add(new GButton("Help", 8));
-
+        this.add(new GButton("helptip", 8));
     }
 }

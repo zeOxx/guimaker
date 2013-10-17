@@ -1,16 +1,23 @@
 package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.GUIMaker;
+import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.MyFileManager;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,22 +25,19 @@ import java.io.InputStream;
  * Date: 10/15/13
  * Time: 5:51 PM
  */
-public class GButton extends JButton {
+public class GButton extends JButton implements Observer {
     ImageIcon icon;
+    String key;
     /**
      * Constructor for GButton
      *
-     * @param tooltip The tooltip for this button
+     * @param key The tooltip for this button
      * @param type The type of button to create
      */
-    public GButton(String tooltip, int type){
-        this.setToolTipText(tooltip);
-        populateG(type);
-    }
-
-    public GButton(String tooltip, ImageIcon i, int type){
-        super(i);
-        this.setToolTipText(tooltip);
+    public GButton(String key, int type){
+        this.key = key;
+        this.setToolTipText(Lang.getInstance().getString(key));
+        observe(Lang.getInstance());
         populateG(type);
     }
 
@@ -51,7 +55,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().newGUI();
                     }
-
                 });
                 break;
             case 1: // Load
@@ -61,7 +64,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().loadGUI();
                     }
-
                 });
                 break;
             case 2: // Save
@@ -71,7 +73,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().saveGUI(false);
                     }
-
                 });
                 break;
             case 3: // Preferences
@@ -81,7 +82,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         GWindowManager.getInstance().createAndRunPreferencesWindow();
                     }
-
                 });
                 break;
             case 4: //Generate
@@ -91,7 +91,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 5: // New row
@@ -101,7 +100,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 6: // Move row up
@@ -111,7 +109,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 7: // Move row down
@@ -121,7 +118,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             case 8: // Help
@@ -131,7 +127,6 @@ public class GButton extends JButton {
                     public void actionPerformed(ActionEvent event) {
                         //
                     }
-
                 });
                 break;
             default:
@@ -145,8 +140,17 @@ public class GButton extends JButton {
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
-            System.err.println("Couldn't find file: " + path);
+            System.err.println(Lang.getInstance().getString("filenotfound") + ": " + path);
             return null;
         }
+    }
+
+    public void observe(Observable o) {
+        o.addObserver(this);
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        this.setToolTipText(Lang.getInstance().getString(key));
     }
 }

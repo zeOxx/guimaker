@@ -1,7 +1,6 @@
 package no.whg.GUIMaker.UI.About;
 
 import no.whg.GUIMaker.Lang;
-import no.whg.GUIMaker.UI.GWindowManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,9 +15,11 @@ import java.awt.event.ActionListener;
  */
 public class AboutFrame extends JFrame {
     JButton closeButton;
+    String tag;
 
     public AboutFrame (String tag){
         populateAbout();
+        this.tag = tag;
         setTitle(tag);
         setSize(300, 300);
         setLocationRelativeTo(null);
@@ -60,7 +61,7 @@ public class AboutFrame extends JFrame {
     private JPanel createCloseButton(){
         JPanel panel = new JPanel();
 
-        closeButton = new JButton("Close");
+        closeButton = new JButton(Lang.getInstance().getString("close"));
         closeButton.setMaximumSize(closeButton.getPreferredSize());
         closeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
@@ -73,4 +74,6 @@ public class AboutFrame extends JFrame {
 
         return panel;
     }
+
+
 }

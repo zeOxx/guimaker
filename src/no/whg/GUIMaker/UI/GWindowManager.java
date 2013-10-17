@@ -15,7 +15,7 @@ import java.util.Locale;
  */
 public class GWindowManager {
     // This class is a singleton, meaning there can only be one instance of this class.
-    // Call Language.getInstance() to use it.
+    // Call GWindowManager.getInstance() to use it.
     private static GWindowManager instance = null;
     GFrame MainWindow;
     AboutFrame AboutWindow;
@@ -47,7 +47,7 @@ public class GWindowManager {
     public void createAndRunMainWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                MainWindow = new GFrame("GUIMaker");
+                MainWindow = new GFrame(Lang.getInstance().getString("title"));
                 MainWindow.setVisible(true);
             }
         });
@@ -70,7 +70,7 @@ public class GWindowManager {
     public void createAndRunAboutWindow(){
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                AboutWindow = new AboutFrame("About GUIMaker");
+                AboutWindow = new AboutFrame(Lang.getInstance().getString("titleabout"));
                 AboutWindow.setVisible(true);
             }
         });

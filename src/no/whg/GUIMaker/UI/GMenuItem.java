@@ -1,10 +1,13 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.MyFileManager;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,7 +15,9 @@ import java.awt.event.ActionListener;
  * Date: 10/15/13
  * Time: 5:49 PM
  */
-public class GMenuItem extends JMenuItem {
+public class GMenuItem extends JMenuItem implements Observer {
+    String text;
+    String tooltip;
     /**
      * Constructor for GMenuItem
      *
@@ -22,10 +27,13 @@ public class GMenuItem extends JMenuItem {
      * @param type The type of menu item to create
      */
     public GMenuItem(String tag, int key, String tooltip, int type){
-        super(tag);
+        this.text = tag;
+        this.tooltip = tooltip;
         this.setMnemonic(key);
+        this.setText(Lang.getInstance().getString(tag));
+        this.setToolTipText(Lang.getInstance().getString(tooltip));
         populateG(type);
-        this.setToolTipText(tooltip);
+        observe(Lang.getInstance());
     }
 
     /**
@@ -95,7 +103,7 @@ public class GMenuItem extends JMenuItem {
             case 8: // Edit/Preferences
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //preferences();
+                        GWindowManager.getInstance().createAndRunPreferencesWindow();
                     }
                 });
                 break;
@@ -117,5 +125,15 @@ public class GMenuItem extends JMenuItem {
                 /* TODO: Error message(s) */
                 break;
         }
+    }
+
+    public void observe(Observable o) {
+        o.addObserver(this);
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        this.setToolTipText(Lang.getInstance().getString(tooltip));
+        this.setText(Lang.getInstance().getString(text));
     }
 }

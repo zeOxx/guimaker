@@ -206,7 +206,7 @@ public class GPanel extends JPanel{
 
                 System.out.println("row: " + row + " column: " + column);
 
-                table.setColumnSelectionInterval(column + 1, column + 1);
+                table.setColumnSelectionInterval(column, column);
                 table.setRowSelectionInterval(row, row);
             }
         }

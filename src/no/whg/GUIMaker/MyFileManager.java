@@ -1,6 +1,7 @@
 package no.whg.GUIMaker;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -138,5 +139,10 @@ public class MyFileManager {
         lastFile = null;
         /* TODO: reset table */
         clearRowList();
+    }
+
+    public void writeJava(String java){
+        //PrintWriter out = new PrintWriter("filename.txt");
+
     }
 }

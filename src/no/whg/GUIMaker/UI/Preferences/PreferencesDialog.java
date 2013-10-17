@@ -14,10 +14,21 @@ import java.util.Locale;
  */
 public class PreferencesDialog extends JOptionPane {
     Locale currentLocale;
+
+    /**
+     * Constructor for PreferencesDialog
+     *
+     * @param cl the current locale
+     */
     public PreferencesDialog(Locale cl){
         currentLocale = cl;
     }
 
+    /**
+     * Shows an input dialog that lets the user change locale
+     *
+     * @param parent The parent this dialog belongs to
+     */
     public void showInputDialog(GFrame parent){
         String temp = currentLocale.getCountry();
         if (temp.equals("US")){

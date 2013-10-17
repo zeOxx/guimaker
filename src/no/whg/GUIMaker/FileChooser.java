@@ -15,12 +15,21 @@ import static no.whg.GUIMaker.MyFileManager.getInstance;
 public class FileChooser {
     JFileChooser jfc;
 
-    /* TODO: commenting */
+    /**
+     * Constructor for FileChooser
+     */
     public FileChooser (){
         //Create a file chooser
         jfc = new JFileChooser();
     }
 
+    /**
+     * Opens a window where the user may load an ArrayList from file, and loads the selected file into an Arraylist
+     *
+     * TODO: Confirmation dialog, exception handling
+     *
+     * @return An ArrayList, unless there is a failure, which will return null
+     */
     public ArrayList loadGUI (){
         int returnVal = jfc.showOpenDialog(null);
 
@@ -47,6 +56,13 @@ public class FileChooser {
         return null;
     }
 
+    /**
+     * Opens a window where the user may save an ArrayList to file
+     *
+     * TODO: Confirmation dialog, exception handling
+     *
+     * @param re The ArrayList to save
+     */
     public void saveGUI (ArrayList re){
         int returnVal = jfc.showSaveDialog(null);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -67,9 +83,17 @@ public class FileChooser {
         }
     }
 
-    public void saveGUI (ArrayList re, File temp){
+    /**
+     * Saves an ArrayList to file at a previously used location
+     *
+     * TODO: Confirmation dialog, exception handling
+     *
+     * @param re The ArrayList to save
+     * @param lastFile The previously used location
+     */
+    public void saveGUI (ArrayList re, File lastFile){
         try {
-            FileOutputStream fos = new FileOutputStream(temp);
+            FileOutputStream fos = new FileOutputStream(lastFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(re);
             oos.close();

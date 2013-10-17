@@ -2,8 +2,6 @@ package no.whg.GUIMaker;
 
 import no.whg.GUIMaker.UI.GWindowManager;
 
-import javax.swing.*;
-
 /**
  * Created with IntelliJ IDEA for guimaker.
  * User: snorre
@@ -12,7 +10,7 @@ import javax.swing.*;
  */
 public class GUIMaker {
     /**
-     * Main
+     * main tells GWindowmanager to create the main window.
      *
      * @param args Command line arguments
      */

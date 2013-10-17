@@ -1,7 +1,5 @@
 package no.whg.GUIMaker;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.ResourceBundle;
@@ -18,6 +16,8 @@ public class Lang extends Observable {
     /**
      * This class is a singleton, meaning there can only be one instance of this class.
      * Call Language.getInstance() to use it.
+     * This class extends Observable.
+     * Use of setCurrentLocale() may be observed by a class that implements Observer.
      */
     private static Lang instance = null;
     private Locale currentLocale;
@@ -26,6 +26,8 @@ public class Lang extends Observable {
     /**
      * Default constructor.
      * The default language is english(US).
+     *
+     * TODO: Remember the user's choice of language.
      */
     protected Lang() {
         currentLocale = new Locale("en", "US");
@@ -82,7 +84,7 @@ public class Lang extends Observable {
     }
 
     /**
-     * Sets the current locale
+     * Sets the current locale, and informs observers of the change.
      *
      * @param l the new locale
      */

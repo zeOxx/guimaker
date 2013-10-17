@@ -38,7 +38,7 @@ public class GMenuItem extends JMenuItem implements Observer {
 
     /**
      * Creates content for this menu item
-     * TODO: add functionality to switch cases 4, 5, 7-10
+     * TODO: add functionality to switch cases 4, 5, 7-10, error message to default
      *
      * @param type The type of content to create
      */
@@ -127,10 +127,21 @@ public class GMenuItem extends JMenuItem implements Observer {
         }
     }
 
+    /**
+     * Starts observing an Observable
+     *
+     * @param o The Observable to observe
+     */
     public void observe(Observable o) {
         o.addObserver(this);
     }
 
+    /**
+     * Called when notified by the observable. Updates content to reflect the change
+     *
+     * @param o The Observable being observed
+     * @param arg The argument passed to the observer
+     */
     @Override
     public void update(Observable o, Object arg) {
         this.setToolTipText(Lang.getInstance().getString(tooltip));

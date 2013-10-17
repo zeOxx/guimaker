@@ -67,10 +67,21 @@ public class GMenu extends JMenu implements Observer {
         }
     }
 
+    /**
+     * Starts observing an Observable
+     *
+     * @param o The Observable to observe
+     */
     public void observe(Observable o) {
         o.addObserver(this);
     }
 
+    /**
+     * Called when notified by the observable. Updates content to reflect the change
+     *
+     * @param o The Observable being observed
+     * @param arg The argument passed to the observer
+     */
     @Override
     public void update(Observable o, Object arg) {
         this.setText(Lang.getInstance().getString(text));

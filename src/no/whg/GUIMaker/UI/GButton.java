@@ -4,18 +4,9 @@ import no.whg.GUIMaker.GUIMaker;
 import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.MyFileManager;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -135,6 +126,12 @@ public class GButton extends JButton implements Observer {
         }
     }
 
+    /**
+     * Creates an icon
+     *
+     * @param path Where the source image is located
+     * @return The icon
+     */
     protected ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = GUIMaker.class.getResource(path);
         if (imgURL != null) {
@@ -145,10 +142,21 @@ public class GButton extends JButton implements Observer {
         }
     }
 
+    /**
+     * Starts observing an Observable
+     *
+     * @param o The Observable to observe
+     */
     public void observe(Observable o) {
         o.addObserver(this);
     }
 
+    /**
+     * Called when notified by the observable. Updates content to reflect the change
+     *
+     * @param o The Observable being observed
+     * @param arg The argument passed to the observer
+     */
     @Override
     public void update(Observable o, Object arg) {
         this.setToolTipText(Lang.getInstance().getString(key));

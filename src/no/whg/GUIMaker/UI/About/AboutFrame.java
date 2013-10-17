@@ -17,6 +17,11 @@ public class AboutFrame extends JFrame {
     JButton closeButton;
     String tag;
 
+    /**
+     * Constructor for AboutFrame
+     *
+     * @param tag The title of this window.
+     */
     public AboutFrame (String tag){
         populateAbout();
         this.tag = tag;
@@ -26,12 +31,20 @@ public class AboutFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * Adds content to AboutFrame
+     */
     private void populateAbout(){
         JPanel panel = createContentPane();
 
         add(panel);
     }
 
+    /**
+     * Creates content pane for AboutFrame
+     *
+     * @return The content panel
+     */
     private JPanel createContentPane(){
         JPanel panel = new JPanel(new BorderLayout(10,10));
         panel.setOpaque(true);
@@ -46,6 +59,11 @@ public class AboutFrame extends JFrame {
         return panel;
     }
 
+    /**
+     * Creates the text panel for the content pane
+     *
+     * @return The text panel
+     */
     private JPanel createTextPanel(){
         JPanel panel = new JPanel();
 
@@ -58,11 +76,17 @@ public class AboutFrame extends JFrame {
         return panel;
     }
 
+    /**
+     * Creates the close button for the content pane
+     *
+     * @return The close button
+     */
     private JPanel createCloseButton(){
         JPanel panel = new JPanel();
 
         closeButton = new JButton(Lang.getInstance().getString("close"));
         closeButton.setMaximumSize(closeButton.getPreferredSize());
+
         closeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 setVisible(false); //you can't see me!
@@ -70,6 +94,7 @@ public class AboutFrame extends JFrame {
             }
 
         });
+
         panel.add(closeButton);
 
         return panel;

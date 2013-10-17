@@ -1,7 +1,5 @@
 package no.whg.GUIMaker;
 
-import javax.swing.JTextArea;
-
 /**
  * Created with IntelliJ IDEA.
  * Package: no.whg.GUIMaker

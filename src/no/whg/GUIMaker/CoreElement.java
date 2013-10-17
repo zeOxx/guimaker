@@ -9,20 +9,26 @@ package no.whg.GUIMaker;
  */
 public class CoreElement {
 
+    private String type;
     private String varName;
     private String text;
-    private int x;
-    private int y;
-    private int column;
-    private int row;
+    private String x;
+    private String y;
+    private String column;
+    private String row;
+    private String fill;
+    private String anchor;
 
     public CoreElement(int id) {
         varName = "var" + String.valueOf(id);
+        type = "default";
         text = "";
-        x = 0;
-        y = 0;
-        column = 0;
-        row = 0;
+        x = "0";
+        y = "0";
+        column = "0";
+        row = "0";
+        fill = "0";
+        anchor = "0";
     }
 
     public String getVarName() {
@@ -33,35 +39,67 @@ public class CoreElement {
         this.varName = varName;
     }
 
-    public int getX() {
+    public String getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(String x) {
         this.x = x;
     }
 
-    public int getY() {
+    public String getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(String y) {
         this.y = y;
     }
 
-    public int getColumn() {
+    public String getColumn() {
         return column;
     }
 
-    public void setColumn(int column) {
+    public void setColumn(String column) {
         this.column = column;
     }
 
-    public int getRow() {
+    public String getRow() {
         return row;
     }
 
-    public void setRow(int row) {
+    public void setRow(String row) {
         this.row = row;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getFill() {
+        return fill;
+    }
+
+    public void setFill(String fill) {
+        this.fill = fill;
+    }
+
+    public String getAnchor() {
+        return anchor;
+    }
+
+    public void setAnchor(String anchor) {
+        this.anchor = anchor;
     }
 }

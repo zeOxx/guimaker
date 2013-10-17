@@ -44,7 +44,7 @@ public class GMenu extends JMenu implements Observer {
                 this.add(new GMenuItem("save", KeyEvent.VK_S, "savelong", 2));
                 this.add(new GMenuItem("saveas", KeyEvent.VK_A, "saveaslong", 3));
                 this.addSeparator();
-                this.add(new GMenuItem("preview", KeyEvent.VK_P, "previewlong", 4));
+                //this.add(new GMenuItem("preview", KeyEvent.VK_P, "previewlong", 4)); // Assignment does not require preview, so don't add this menu item
                 this.add(new GMenuItem("generate", KeyEvent.VK_G, "generatelong", 5));
                 this.addSeparator();
                 this.add(new GMenuItem("exit", KeyEvent.VK_E, "exitlong", 6));

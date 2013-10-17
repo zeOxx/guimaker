@@ -116,7 +116,7 @@ public class GButton extends JButton implements Observer {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //
+                        GWindowManager.getInstance().createAndRunHelpWindow();
                     }
                 });
                 break;

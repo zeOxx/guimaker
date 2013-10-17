@@ -22,31 +22,6 @@ public class GDialog extends JOptionPane {
         String [] possibilities = element.types;
         String current = element.getType();
 
-/*        String s = (String)super.showInputDialog(
-                parent,
-                Lang.getInstance().getString("type") + ":\n",
-                Lang.getInstance().getString("titlepreferences"),
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                possibilities,
-                current);
-        //If a string was returned, say so.
-        if ((s != null) && (s.length() > 0)) {
-            if (!s.equals(current)){
-                for (int i = 0; i < possibilities.length; i++){
-                    System.out.println(i);
-                    if (s.equals(possibilities[i])){
-                        System.out.println("Breaking at " + i);
-                        break;
-                    }
-                }
-            } else {
-                System.out.println("User chose " + s + ", but that was already selected");
-            }
-        }
-        //If you're here, the return value was null/empty.
-        System.out.println("Return value was null/empty");*/
-
         if (current.equals(possibilities[2])) {
             JTextField rows = new JTextField();
             JTextField width = new JTextField();

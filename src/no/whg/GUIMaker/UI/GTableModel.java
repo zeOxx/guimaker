@@ -119,10 +119,10 @@ public class GTableModel extends AbstractTableModel {
                 element.setY((String)value);
                 break;
             case 7:
-                element.setFill((String)value);
+                element.setFill(value.toString());
                 break;
             case 8:
-                element.setAnchor((String)value);
+                element.setAnchor(value.toString());
                 break;
             default:
                 System.out.println("invalid index");

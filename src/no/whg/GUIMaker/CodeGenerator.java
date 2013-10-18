@@ -257,7 +257,7 @@ public class CodeGenerator {
             case 8:
                 return "WEST";
             default:
-                return "CETNER";
+                return "CENTER";
         }
     }
 

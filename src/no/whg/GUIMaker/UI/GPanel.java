@@ -9,6 +9,11 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Vector;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,6 +26,8 @@ public class GPanel extends JPanel{
     private JTable table;
     private GTableModel tableModel = null;
     private JScrollPane scroller;
+
+    private JPopupMenu mousePop;
 
     private ImageIcon[] fillImages;
     private String[] fillStrings = { "none", "all", "vert", "hori" };
@@ -45,6 +52,14 @@ public class GPanel extends JPanel{
      * @param contentHeight Height of the content
      */
     private void initComponent(int contentWidth, int contentHeight) {
+        mousePop = new JPopupMenu();
+        JMenuItem propItem = new JMenuItem(Lang.getInstance().getString("properties"));
+        propItem.addActionListener(new ActionListenerPopup());
+        JMenuItem deleteItem = new JMenuItem(Lang.getInstance().getString("delete"));
+        deleteItem.addActionListener(new ActionListenerPopup());
+        mousePop.add(propItem);
+        mousePop.add(deleteItem);
+
         setColumnNames();
         tableModel = new GTableModel(columnNames);
         tableModel.addTableModelListener(new GPanel.GTableModelListener());
@@ -78,6 +93,8 @@ public class GPanel extends JPanel{
 
         setupImages();
         changeColumnSize();
+
+        table.addMouseListener(new PopupListener());
     }
 
     /**
@@ -207,6 +224,41 @@ public class GPanel extends JPanel{
         tableModel.addEmptyRow();
     }
 
+    public void deleteRow(int row) {
+        tableModel.deleteRow(row);
+    }
+
+    public JTable getTable() {
+        return table;
+    }
+
+    public Vector<Element> getData() {
+        return tableModel.getData();
+    }
+
+    public void changeElementInTable(Element e) {
+        int row = table.getSelectedRow();
+
+        /**
+         * There is probably a better, smarter way to do this but time is a cruel mistress
+         */
+        tableModel.getData().get(row).setAnchor(e.getAnchor());
+        tableModel.getData().get(row).setColumn(e.getColumn());
+        tableModel.getData().get(row).setColumns(e.getColumns());
+        tableModel.getData().get(row).setFill(e.getFill());
+        tableModel.getData().get(row).setHeight(e.getHeight());
+        tableModel.getData().get(row).setMaxValue(e.getMaxValue());
+        tableModel.getData().get(row).setMinValue(e.getMinValue());
+        tableModel.getData().get(row).setRow(e.getRow());
+        tableModel.getData().get(row).setRows(e.getRows());
+        tableModel.getData().get(row).setStartValue(e.getStartValue());
+        tableModel.getData().get(row).setStepValue(e.getStepValue());
+        tableModel.getData().get(row).setText(e.getText());
+        tableModel.getData().get(row).setType(e.getType());
+        tableModel.getData().get(row).setVarName(e.getVarName());
+        tableModel.getData().get(row).setWidth(e.getWidth());
+    }
+
     /**
      * Moves the selected row up
      */
@@ -235,13 +287,13 @@ public class GPanel extends JPanel{
 
         System.out.println("Rowcount: " + table.getModel().getRowCount() + " Row: " + row);
 
-        if (row < table.getModel().getRowCount() - 1) {
+        if (row < table.getModel().getRowCount() - 1 && row >= 0) {
 
             for(int col = 0; col < table.getModel().getColumnCount(); col++) {
                 Object o1 = table.getModel().getValueAt(row, col);
                 Object o2 = table.getModel().getValueAt(row + 1, col);
                 table.getModel().setValueAt(o1, row + 1, col);
-                table.getModel().setValueAt(o2, row,  col);
+                table.getModel().setValueAt(o2, row, col);
             }
         } else
             Toolkit.getDefaultToolkit().beep();
@@ -334,6 +386,40 @@ public class GPanel extends JPanel{
             setIcon(icon);
 
             return this;
+        }
+    }
+
+    /**
+     * Mouselistener for rightclicking
+     */
+    class PopupListener extends MouseAdapter {
+        public void mousePressed(MouseEvent e) {
+            showPopup(e);
+        }
+        public void mouseReleased(MouseEvent e) {
+            showPopup(e);
+        }
+
+        /**
+         * Shows the popupmenu at the specified point
+         * @param e MouseEvent
+         */
+        private void showPopup(MouseEvent e) {
+            if (e.isPopupTrigger()) {
+                mousePop.show(e.getComponent(), e.getX(), e.getY());
+            }
+        }
+    }
+
+    class ActionListenerPopup implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JMenuItem item = (JMenuItem)e.getSource();
+
+            if (item.getText() == Lang.getInstance().getString("properties"))
+                GWindowManager.getInstance().createAndRunGPanelPreferencesDialog((Element)tableModel.getData().get(table.getSelectedRow()));
+            else if (item.getText() == Lang.getInstance().getString("delete"))
+                GWindowManager.getInstance().MainWindow.getPanel().deleteRow(table.getSelectedRow());
         }
     }
 }

@@ -2,9 +2,7 @@ package no.whg.GUIMaker.UI;
 
 import no.whg.GUIMaker.Element;
 
-import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-import java.awt.*;
 import java.util.Vector;
 
 /**
@@ -16,7 +14,7 @@ import java.util.Vector;
  */
 public class GTableModel extends AbstractTableModel {
     protected String[] columnNames;
-    private Vector data;
+    private Vector<Element> data;
 
     /**
      * Constructor
@@ -24,7 +22,7 @@ public class GTableModel extends AbstractTableModel {
      */
     public GTableModel(String[] columnNames){
         this.columnNames = columnNames;
-        data = new Vector();
+        data = new Vector<Element>();
     }
 
     /**
@@ -76,9 +74,9 @@ public class GTableModel extends AbstractTableModel {
             case 4:
                 return element.getColumn();
             case 5:
-                return element.getX();
+                return element.getRows();
             case 6:
-                return element.getY();
+                return element.getColumns();
             case 7:
                 return element.getFill();
             case 8:
@@ -115,10 +113,10 @@ public class GTableModel extends AbstractTableModel {
                 element.setColumn((String)value);
                 break;
             case 5:
-                element.setX((String)value);
+                element.setRows((String) value);
                 break;
             case 6:
-                element.setY((String)value);
+                element.setColumns((String) value);
                 break;
             case 7:
                 element.setFill(value.toString());
@@ -158,8 +156,8 @@ public class GTableModel extends AbstractTableModel {
             element.getText().trim().equals("") &&
             element.getRow().trim().equals("") &&
             element.getColumn().trim().equals("") &&
-            element.getX().trim().equals("") &&
-            element.getY().trim().equals("") &&
+            element.getRows().trim().equals("") &&
+            element.getColumns().trim().equals("") &&
             element.getFill().trim().equals("") &&
             element.getAnchor().trim().equals(""))
         {
@@ -185,7 +183,7 @@ public class GTableModel extends AbstractTableModel {
         }
     }
 
-    public Vector getData() {
+    public Vector<Element> getData() {
         return data;
     }
 }

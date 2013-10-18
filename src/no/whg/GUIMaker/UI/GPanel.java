@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Vector;
 
 /**
  * Created with IntelliJ IDEA.
@@ -229,6 +230,33 @@ public class GPanel extends JPanel{
 
     public JTable getTable() {
         return table;
+    }
+
+    public Vector<Element> getData() {
+        return tableModel.getData();
+    }
+
+    public void changeElementInTable(Element e) {
+        int row = table.getSelectedRow();
+
+        /**
+         * There is probably a better, smarter way to do this but time is a cruel mistress
+         */
+        tableModel.getData().get(row).setAnchor(e.getAnchor());
+        tableModel.getData().get(row).setColumn(e.getColumn());
+        tableModel.getData().get(row).setColumns(e.getColumns());
+        tableModel.getData().get(row).setFill(e.getFill());
+        tableModel.getData().get(row).setHeight(e.getHeight());
+        tableModel.getData().get(row).setMaxValue(e.getMaxValue());
+        tableModel.getData().get(row).setMinValue(e.getMinValue());
+        tableModel.getData().get(row).setRow(e.getRow());
+        tableModel.getData().get(row).setRows(e.getRows());
+        tableModel.getData().get(row).setStartValue(e.getStartValue());
+        tableModel.getData().get(row).setStepValue(e.getStepValue());
+        tableModel.getData().get(row).setText(e.getText());
+        tableModel.getData().get(row).setType(e.getType());
+        tableModel.getData().get(row).setVarName(e.getVarName());
+        tableModel.getData().get(row).setWidth(e.getWidth());
     }
 
     /**

@@ -7,7 +7,7 @@ import javax.swing.*;
 
 /**
  * Created with IntelliJ IDEA.
- * User: snorre
+ * User: snorre and Inge
  * Date: 10/17/13
  * Time: 6:07 PM
  */
@@ -18,14 +18,24 @@ public class GDialog extends JOptionPane {
         this.element = e;
     }
 
+    /**
+     *
+     * @param parent
+     */
     public void showInputDialog(GFrame parent){
         String [] possibilities = element.types;
         String current = element.getType();
 
+        /**
+         * JTextField
+         */
         if (current.equals(possibilities[2])) {
             JTextField rows = new JTextField();
+            rows.setText(element.getRows());
             JTextField width = new JTextField();
+            width.setText(String.valueOf(element.getWidth()));
             JTextField height = new JTextField();
+            height.setText(String.valueOf(element.getHeight()));
 
             final JComponent[] inputs = new JComponent[] {
                     new JLabel(Lang.getInstance().getString("rows")), rows,
@@ -34,13 +44,27 @@ public class GDialog extends JOptionPane {
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
-        } else if (current.equals(possibilities[3])) {
+
+            element.setRows(rows.getText());
+            element.setWidth(Integer.parseInt(width.getText()));
+            element.setHeight(Integer.parseInt(height.getText()));
+        }
+        /**
+         * JTextArea
+         */
+        else if (current.equals(possibilities[3])) {
             JTextField columns = new JTextField();
+            columns.setText(element.getColumns());
             JTextField rows = new JTextField();
+            rows.setText(element.getRows());
             JTextField width = new JTextField();
+            width.setText(String.valueOf(element.getWidth()));
             JTextField height = new JTextField();
+            height.setText(String.valueOf(element.getHeight()));
             JCheckBox scroll = new JCheckBox();
+            scroll.setSelected(element.isScroll());
             JCheckBox wrap = new JCheckBox();
+            wrap.setSelected(element.isWrap());
 
             final JComponent[] inputs = new JComponent[] {
                     new JLabel(Lang.getInstance().getString("columns")), columns,
@@ -52,11 +76,26 @@ public class GDialog extends JOptionPane {
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
-        } else if (current.equals(possibilities[5])) {
+
+            element.setColumns(columns.getText());
+            element.setRows(rows.getText());
+            element.setWidth(Integer.parseInt(width.getText()));
+            element.setHeight(Integer.parseInt(height.getText()));
+            element.setScroll(scroll.isSelected());
+            element.setWrap(wrap.isSelected());
+        }
+        /**
+         * JList
+         */
+        else if (current.equals(possibilities[5])) {
             JTextField width = new JTextField();
+            width.setText(String.valueOf(element.getWidth()));
             JTextField height = new JTextField();
+            height.setText(String.valueOf(element.getHeight()));
             JCheckBox scroll = new JCheckBox();
+            scroll.setSelected(element.isScroll());
             JCheckBox combo = new JCheckBox();
+            combo.setSelected(element.isCombo());
 
             final JComponent[] inputs = new JComponent[] {
                     new JLabel(Lang.getInstance().getString("width")), width,
@@ -66,10 +105,22 @@ public class GDialog extends JOptionPane {
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
-        } else if (current.equals(possibilities[6])) {
+
+            element.setWidth(Integer.parseInt(width.getText()));
+            element.setHeight(Integer.parseInt(height.getText()));
+            element.setScroll(scroll.isSelected());
+            element.setCombo(combo.isSelected());
+        }
+        /**
+         * JComboBox
+         */
+        else if (current.equals(possibilities[6])) {
             JTextField width = new JTextField();
+            width.setText(String.valueOf(element.getWidth()));
             JTextField height = new JTextField();
+            height.setText(String.valueOf(element.getHeight()));
             JCheckBox combo = new JCheckBox();
+            combo.setSelected(element.isCombo());
 
             final JComponent[] inputs = new JComponent[] {
                     new JLabel(Lang.getInstance().getString("width")), width,
@@ -78,7 +129,15 @@ public class GDialog extends JOptionPane {
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
-        } else if (current.equals(possibilities[7])) {
+
+            element.setWidth(Integer.parseInt(width.getText()));
+            element.setHeight(Integer.parseInt(height.getText()));
+            element.setCombo(combo.isSelected());
+        }
+        /**
+         * JSpinnerList
+         */
+        else if (current.equals(possibilities[7])) {
             JTextField spinnerList = new JTextField();
 
             final JComponent[] inputs = new JComponent[] {
@@ -86,11 +145,19 @@ public class GDialog extends JOptionPane {
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
-        } else if (current.equals(possibilities[8])) {
+        }
+        /**
+         * JSpinnerNumber
+         */
+        else if (current.equals(possibilities[8])) {
             JTextField startValue = new JTextField();
+            startValue.setText(String.valueOf(element.getStartValue()));
             JTextField minValue = new JTextField();
+            minValue.setText(String.valueOf(element.getMinValue()));
             JTextField maxValue = new JTextField();
+            maxValue.setText(String.valueOf(element.getMaxValue()));
             JTextField stepValue = new JTextField();
+            stepValue.setText(String.valueOf(element.getStepValue()));
 
             final JComponent[] inputs = new JComponent[] {
                     new JLabel(Lang.getInstance().getString("dialogStartValue")), startValue,
@@ -101,5 +168,7 @@ public class GDialog extends JOptionPane {
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
         }
+
+        GWindowManager.getInstance().MainWindow.getPanel().changeElementInTable(element);
     }
 }

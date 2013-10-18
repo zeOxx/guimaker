@@ -141,6 +141,10 @@ public class GTableModel extends AbstractTableModel {
             return columnNames[col];
     }
 
+    public void setColumnNames(String[] names) {
+        columnNames = names;
+    }
+
     /**
      *
      * @return Returns wether the table has an empty row

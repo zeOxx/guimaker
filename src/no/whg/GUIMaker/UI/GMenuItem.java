@@ -48,6 +48,7 @@ public class GMenuItem extends JMenuItem implements Observer {
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().newGUI();
+                        GWindowManager.getInstance().MainWindow.getPanel().resetData();
                     }
                 });
                 break;

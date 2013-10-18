@@ -28,9 +28,11 @@ public class GFrame extends JFrame {
                     switch (e.getKeyCode()){
                         case KeyEvent.VK_N:
                             MyFileManager.getInstance().newGUI();
+                            GWindowManager.getInstance().MainWindow.getPanel().resetData();
                             break;
                         case KeyEvent.VK_L:
                             MyFileManager.getInstance().loadGUI();
+                            GWindowManager.getInstance().MainWindow.getPanel().setData(MyFileManager.getInstance().getRowList());
                             break;
                         case KeyEvent.VK_S:
                             MyFileManager.getInstance().saveGUI(false, GWindowManager.getInstance().MainWindow.getPanel().getData());

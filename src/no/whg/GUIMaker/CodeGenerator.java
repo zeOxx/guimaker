@@ -222,7 +222,7 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJComboBox(Element e){
-        String retString = "String " + e.getVarName() + "Data = " + '"' + '"' + ");\n" +
+        String retString = "String " + e.getVarName() + "Data = " + '"' + '"' + ";\n" +
                 "DefaultComboBoxModel " + e.getVarName() + "Model = new DefaultComboBoxModel (" + e.getVarName() +"Data.split (\"[\\\\p{Punct}\\\\s]+\"));\n" +
                 "JList " + e.getVarName() + " = new JList(" + e.getVarName() + "Model);\n" +
                 assembleConstraints(e) +
@@ -238,7 +238,7 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJSpinnerList(Element e){
-        String retString = "String " + e.getVarName() + "Data = " + '"' + '"' + ");\n" +
+        String retString = "String " + e.getVarName() + "Data = " + '"' + '"' + ";\n" +
                 "SpinnerListModel " + e.getVarName() + "Model = new SpinnerListModel(" + e.getVarName() + "Data.split (\"[\\\\p{Punct}\\\\s]+\"));\n" +
                 "JSpinner " + e.getVarName() + " = new JSpinner(" + e.getVarName() + "Model);\n" +
                 assembleConstraints(e) +

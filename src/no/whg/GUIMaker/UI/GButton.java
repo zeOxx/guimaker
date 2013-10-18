@@ -82,7 +82,7 @@ public class GButton extends JButton implements Observer {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        CodeGenerator.getInstance().assembleAndPrintFile(GWindowManager.getInstance().MainWindow.getPanel().getTable().getData());
+                        CodeGenerator.getInstance().assembleAndPrintFile(GWindowManager.getInstance().MainWindow.getPanel().getData());
                     }
                 });
                 break;

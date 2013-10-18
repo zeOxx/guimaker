@@ -13,7 +13,10 @@ public class CodeGenerator {
     // Call GWindowManager.getInstance() to use it.
     private static CodeGenerator instance = null;
 
-    private String java_first = "import javax.swing.*;\nimport java.awt.*;\n\npublic class MyGUI extends JFrame {\n\n    public static void main(String[] args){\n        SwingUtilities.invokeLater(new Runnable() {\n            public void run() {SwingUtilities.invokeLater(new Runnable() {\n                @Override\n                public void run() {\n                    MyGUI GUI = new MyGUI(\"MyGUI\");\n                    GUI.setVisible(true);\n                }\n            });\n            }\n        });\n    }\n\n    public MyGUI(String title){\n        setTitle(title);\n        setSize(700, 400);\n        setLocationRelativeTo(null);\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\n        createGUI();\n    }\n\n    private void createGUI(){";
+    private String java_first = "import javax.swing.*;\nimport java.awt.*;\n\npublic class MyGUI extends JFrame {\n\n    public static void main(String[] args){\n        SwingUtilities.invokeLater(new Runnable() {\n            public void run() {SwingUtilities.invokeLater(new Runnable() {\n                @Override\n                public void run() {\n                    MyGUI GUI = new MyGUI(\"MyGUI\");\n                    GUI.setVisible(true);\n                }\n            });\n            }\n        });\n    }\n\n    public MyGUI(String title){\n        setTitle(title);\n        setSize(700, 400);\n        setLocationRelativeTo(null);\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\n        createGUI();\n    }\n\n    private void createGUI(){\n" +
+            "    GridBagLayout layout = new GridBagLayout ();\n" +
+            "    GridBagConstraints gbc = new GridBagConstraints();\n" +
+            "    setLayout (layout);\n";
     private String java_second = "    }\n\n    private JLabel createJLabel(String value){\n        JLabel label = new JLabel(value);\n        return label;\n    }\n\n    private JButton createJButton(String value){\n        JButton button = new JButton(value);\n        return button;\n    }\n\n    private JTextField createJTextField(int value){\n        JTextField text = new JTextField(value);\n        return text;\n    }\n\n    private JTextArea createJTextArea(int valueR, int valueC){\n        JTextArea text = new JTextArea(valueR, valueC);\n        return text;\n    }\n\n    private JCheckBox createJCheckBox(String value){\n        JCheckBox box = new JCheckBox(value);\n        return box;\n    }\n\n    private JList createJList(Object [] values){\n        JList list = new JList(values);\n        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);\n        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);\n        list.setVisibleRowCount(-1);\n        return list;\n    }\n\n    private JComboBox createJComboBox(String [] values){\n        JComboBox combo = new JComboBox(values);\n        combo.setSelectedIndex(0);\n        return combo;\n    }\n\n    private JSpinner createJSpinnerList(String [] values){\n        SpinnerListModel spinModel = new SpinnerListModel(values);\n        JSpinner spin = new JSpinner(spinModel);\n        return spin;\n    }\n\n    private JSpinner createJSpinnerNumber(int value, int span){\n        // needs to add SpinnerNumberModel\n        SpinnerModel spinModel = new SpinnerNumberModel(value,          //initial value\n                                                    value - span,   //min value\n                                                    value + span,   //max value\n                                                    1);             //step\n        JSpinner spin = new JSpinner(spinModel);\n        return spin;\n    }\n}";
 
     /**
@@ -109,13 +112,33 @@ public class CodeGenerator {
     }
 
     /**
+     * Assembles constraints from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
+    private String assembleConstraints(Element e){
+        String retString = "gbc.gridx = " + e.getRow() + ";\n" +
+                            "gbc.gridy = " + e.getColumn() + ";\n" +
+                            "gbc.gridwidth = " + e.getRows() + ";\n" +
+                            "gbc.gridheight = " + e.getColumns() + ";\n" +
+                            "gbc.anchor = " + getGridBagConstraintsAnchor(e.getAnchor()) + ";\n" +
+                            "gbc.fill = " + getGridBagConstraintsFill(e.getFill()) + ";\n";
+        return retString;
+    }
+
+    /**
      * Assmbles Java code from an Element
      *
      * @param e The Element
      * @return String containing Java code
      */
     private String assembleJLabel(Element e){
-        return "\n//JLabel up in hurr\n";
+        String retString = "JLabel " + e.getVarName() + " = new JLabel(" + '"' + '"' + ");\n" +
+                           assembleConstraints(e) +
+                           "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+                           "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     /**
@@ -125,7 +148,11 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJButton(Element e){
-        return "";
+        String retString = "JButton " + e.getVarName() + " = new JButton(" + '"' + '"' + ");\n" +
+                assembleConstraints(e) +
+                "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+                "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     /**
@@ -135,7 +162,11 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJTextField(Element e){
-        return "";
+        String retString = "JTextField " + e.getVarName() + " = new JTextField(" + '"' + '"' + ");\n" +
+                assembleConstraints(e) +
+                "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+                "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     /**
@@ -145,7 +176,14 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJTextArea(Element e){
-        return "";
+        String retString = "JTextArea " + e.getVarName() + " = new JTextArea(" + '"' + '"' + ");\n" +
+                assembleConstraints(e) +
+                "JScrollPane " + e.getVarName() + "ScrollPane = new JScrollPane(" + e.getVarName() + ");\n" +
+                "layout.setConstraints(" + e.getVarName() + "ScrollPane , gbc);\n" +
+                "add(" + e.getVarName() +");\n" +
+                e.getVarName() + ".setLineWrap(true);\n" +
+                e.getVarName() + ".setWrapStyleWord(true)\n";
+        return retString;
     }
 
     /**

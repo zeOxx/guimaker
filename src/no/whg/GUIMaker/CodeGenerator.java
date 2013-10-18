@@ -17,7 +17,7 @@ public class CodeGenerator {
             "    GridBagLayout layout = new GridBagLayout ();\n" +
             "    GridBagConstraints gbc = new GridBagConstraints();\n" +
             "    setLayout (layout);\n";
-    private String java_second = "    }\n\n    private JLabel createJLabel(String value){\n        JLabel label = new JLabel(value);\n        return label;\n    }\n\n    private JButton createJButton(String value){\n        JButton button = new JButton(value);\n        return button;\n    }\n\n    private JTextField createJTextField(int value){\n        JTextField text = new JTextField(value);\n        return text;\n    }\n\n    private JTextArea createJTextArea(int valueR, int valueC){\n        JTextArea text = new JTextArea(valueR, valueC);\n        return text;\n    }\n\n    private JCheckBox createJCheckBox(String value){\n        JCheckBox box = new JCheckBox(value);\n        return box;\n    }\n\n    private JList createJList(Object [] values){\n        JList list = new JList(values);\n        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);\n        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);\n        list.setVisibleRowCount(-1);\n        return list;\n    }\n\n    private JComboBox createJComboBox(String [] values){\n        JComboBox combo = new JComboBox(values);\n        combo.setSelectedIndex(0);\n        return combo;\n    }\n\n    private JSpinner createJSpinnerList(String [] values){\n        SpinnerListModel spinModel = new SpinnerListModel(values);\n        JSpinner spin = new JSpinner(spinModel);\n        return spin;\n    }\n\n    private JSpinner createJSpinnerNumber(int value, int span){\n        // needs to add SpinnerNumberModel\n        SpinnerModel spinModel = new SpinnerNumberModel(value,          //initial value\n                                                    value - span,   //min value\n                                                    value + span,   //max value\n                                                    1);             //step\n        JSpinner spin = new JSpinner(spinModel);\n        return spin;\n    }\n}";
+    private String java_second = "    }\n}";
 
     /**
      * Default constructor.
@@ -122,8 +122,8 @@ public class CodeGenerator {
                 "gbc.gridy = " + e.getColumn() + ";\n" +
                 "gbc.gridwidth = " + e.getRows() + ";\n" +
                 "gbc.gridheight = " + e.getColumns() + ";\n" +
-                "gbc.anchor = " + getGridBagConstraintsAnchor(e.getAnchor()) + ";\n" +
-                "gbc.fill = " + getGridBagConstraintsFill(e.getFill()) + ";\n";
+                "gbc.anchor = java.awt.GridBagConstraints." + getGridBagConstraintsAnchor(e.getAnchor()) + ";\n" +
+                "gbc.fill = java.awt.GridBagConstraints." + getGridBagConstraintsFill(e.getFill()) + ";\n";
         return retString;
     }
 

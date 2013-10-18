@@ -39,6 +39,11 @@ public class CodeGenerator {
         return instance;
     }
 
+    /**
+     * Assembles data as Java and sends it for print
+     *
+     * @param v Vector of Element objects
+     */
     public void assembleAndPrintFile(Vector v){
         String partOne = java_first;
         String partTwo = java_second;
@@ -261,8 +266,14 @@ public class CodeGenerator {
         return retString;
     }
 
-    private String getGridBagConstraintsAnchor(String derp) {
-        switch (derp.charAt(0)) {
+    /**
+     * Gets the correct value for java.awt.getGridBagConstraints
+     *
+     * @param value Index of desired constraint
+     * @return The correct String
+     */
+    private String getGridBagConstraintsAnchor(String value) {
+        switch (value.charAt(0)) {
             case 0:
                 return "CENTER";
             case 1:
@@ -286,8 +297,14 @@ public class CodeGenerator {
         }
     }
 
-    private String getGridBagConstraintsFill(String derp) {
-        switch (derp.charAt(0)) {
+    /**
+     * Gets the correct value for java.awt.getGridBagConstraints
+     *
+     * @param value Index of desired constraint
+     * @return The correct String
+     */
+    private String getGridBagConstraintsFill(String value) {
+        switch (value.charAt(0)) {
             case 0:
                 return "NONE";
             case 1:

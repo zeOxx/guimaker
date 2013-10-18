@@ -7,7 +7,6 @@ import no.whg.GUIMaker.UI.Help.HelpFrame;
 import no.whg.GUIMaker.UI.Preferences.PreferencesDialog;
 
 import javax.swing.*;
-import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.

@@ -193,33 +193,64 @@ public class GPanel extends JPanel{
     }
 
     /**
+     * NOTE!
+     * The following methods call methods that are unavailable when using table.getModel()
+     */
+
+    /**
      * Adds an empty row in the model
      */
     public void addEmptyRow() {
         tableModel.addEmptyRow();
     }
 
+    /**
+     * Deletes given row
+     *
+     * @param row Row to delete
+     */
     public void deleteRow(int row) {
         tableModel.deleteRow(row);
     }
 
+    /**
+     * Get the table
+     *
+     * @return Returns the table
+     */
     public JTable getTable() {
         return table;
     }
 
+    /**
+     * Get the data vector
+     *
+     * @return Returns the element vector
+     */
     public Vector<Element> getData() {
         return tableModel.getData();
     }
 
+    /**
+     * Sets the datavector to a new vector. Used when loading
+     *
+     * @param data the data loaded
+     */
     public void setData(Vector<Element> data) {
         tableModel.setData(data);
         tableModel.fireTableDataChanged();
     }
 
+    /**
+     * Resets the data vector
+     */
     public void resetData() {
         tableModel.resetData();
     }
 
+    /**
+     * Used to reload columnnames when languages are changes
+     */
     public void setColumnNamesInModel() {
         setColumnNames();
         tableModel.setColumnNames(columnNames);
@@ -227,6 +258,11 @@ public class GPanel extends JPanel{
         tableModel.fireTableStructureChanged();
     }
 
+    /**
+     * In all honesty this is a terrible method
+     *
+     * @param e the edited Element
+     */
     public void changeElementInTable(Element e) {
         int row = table.getSelectedRow();
 

@@ -33,7 +33,7 @@ public class GPanel extends JPanel{
     private String[] fillStrings = { "none", "all", "vert", "hori" };
 
     private ImageIcon[] anchorImages;
-    private String[] anchorStrings = { "C", "Cs", "E", "Es", "N", "Ns", "NE", "NEs", "NW", "S", "Ss", "SE", "SEs", "SW", "W" };
+    private String[] anchorStrings = { "C", "E", "N", "NE", "NW", "S", "SE", "SW", "W" };
 
     /**
      * Constructor
@@ -62,7 +62,6 @@ public class GPanel extends JPanel{
 
         setColumnNames();
         tableModel = new GTableModel(columnNames);
-        tableModel.addTableModelListener(new GPanel.GTableModelListener());
         table = new JTable();
         table.setModel(tableModel);
         table.setSurrendersFocusOnKeystroke(true);
@@ -194,30 +193,6 @@ public class GPanel extends JPanel{
     }
 
     /**
-     * Inner class which implements TableModelListener.
-     */
-    private class GTableModelListener implements TableModelListener {
-
-        /**
-         * Listener mostly for debug purposes.
-         * Prints line to console of which cell is currently in focus
-         *
-         * @param event event fired by user moving around in the table
-         */
-        public void tableChanged(TableModelEvent event) {
-            if (event.getType() == TableModelEvent.UPDATE) {
-                int column = event.getColumn();
-                int row = event.getFirstRow();
-
-                System.out.println("row: " + row + " column: " + column);
-
-                table.setColumnSelectionInterval(column, column);
-                table.setRowSelectionInterval(row, row);
-            }
-        }
-    }
-
-    /**
      * Adds an empty row in the model
      */
     public void addEmptyRow() {
@@ -257,6 +232,8 @@ public class GPanel extends JPanel{
         tableModel.getData().get(row).setType(e.getType());
         tableModel.getData().get(row).setVarName(e.getVarName());
         tableModel.getData().get(row).setWidth(e.getWidth());
+
+        tableModel.fireTableDataChanged();
     }
 
     /**
@@ -411,6 +388,9 @@ public class GPanel extends JPanel{
         }
     }
 
+    /**
+     * Popuplistener
+     */
     class ActionListenerPopup implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

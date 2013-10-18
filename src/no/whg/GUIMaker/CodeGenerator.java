@@ -235,4 +235,44 @@ public class CodeGenerator {
     private String assembleJSpinnerNumber(Element e){
         return "";
     }
+
+    private String getGridbagConstraintsAnchor(int derp) {
+        switch (derp) {
+            case 0:
+                return "CENTER";
+            case 1:
+                return "EAST";
+            case 2:
+                return "NORTH";
+            case 3:
+                return "NORTHEAST";
+            case 4:
+                return "NORTHWEST";
+            case 5:
+                return "SOUTH";
+            case 6:
+                return "SOUTHEAST";
+            case 7:
+                return "SOUTHWEST";
+            case 8:
+                return "WEST";
+            default:
+                return "CETNER";
+        }
+    }
+
+    private String getGridbagConstrainsFill(int derp) {
+        switch (derp) {
+            case 0:
+                return "NONE";
+            case 1:
+                return "BOTH";
+            case 2:
+                return "VERTICAL";
+            case 3:
+                return "HORIZONTAL";
+            default:
+                return "NONE";
+        }
+    }
 }

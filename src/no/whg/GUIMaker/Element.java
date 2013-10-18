@@ -60,6 +60,8 @@ public class Element {
         scroll = true;
         wrap = true;
         combo = true;
+
+        spinner = "";
     }
 
     public String getVarName() {
@@ -206,4 +208,13 @@ public class Element {
     public void setCombo(boolean combo) {
         this.combo = combo;
     }
+
+    public String getSpinner() {
+        return spinner;
+    }
+
+    public void setSpinner(String spinner) {
+        this.spinner = spinner;
+    }
+
 }

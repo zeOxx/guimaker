@@ -139,12 +139,15 @@ public class GDialog extends JOptionPane {
          */
         else if (current.equals(possibilities[7])) {
             JTextField spinnerList = new JTextField();
+            spinnerList.setText(element.getSpinner());
 
             final JComponent[] inputs = new JComponent[] {
                     new JLabel(Lang.getInstance().getString("dialogSpinner")), spinnerList
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
+
+            element.setSpinner(spinnerList.getText());
         }
         /**
          * JSpinnerNumber
@@ -167,6 +170,11 @@ public class GDialog extends JOptionPane {
             };
 
             showMessageDialog(null, inputs, current + " dialog", JOptionPane.PLAIN_MESSAGE);
+
+            element.setStartValue(Float.parseFloat(startValue.getText()));
+            element.setMinValue(Float.parseFloat(minValue.getText()));
+            element.setMaxValue(Float.parseFloat(maxValue.getText()));
+            element.setStepValue(Float.parseFloat(stepValue.getText()));
         }
 
         GWindowManager.getInstance().MainWindow.getPanel().changeElementInTable(element);

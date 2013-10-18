@@ -180,7 +180,7 @@ public class CodeGenerator {
                 assembleConstraints(e) +
                 "JScrollPane " + e.getVarName() + "ScrollPane = new JScrollPane(" + e.getVarName() + ");\n" +
                 "layout.setConstraints(" + e.getVarName() + "ScrollPane , gbc);\n" +
-                "add(" + e.getVarName() +");\n" +
+                "add(" + e.getVarName() +"ScrollPane);\n" +
                 e.getVarName() + ".setLineWrap(true);\n" +
                 e.getVarName() + ".setWrapStyleWord(true)\n";
         return retString;
@@ -193,7 +193,11 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJCheckBox(Element e){
-        return "";
+        String retString = "JCheckBox " + e.getVarName() + " = new JCheckBox(" + '"' + '"' + ");\n" +
+                assembleConstraints(e) +
+                "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+                "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     /**
@@ -203,7 +207,12 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJList(Element e){
-        return "";
+        String retString = "JList " + e.getVarName() + " = new JList(" + '"' + '"' + ");\n" +
+                assembleConstraints(e) +
+                "JScrollPane " + e.getVarName() + "ScrollPane = new JScrollPane(" + e.getVarName() + ");\n" +
+                "layout.setConstraints(" + e.getVarName() + "ScrollPane, gbc);\n" +
+                "add(" + e.getVarName() +"ScrollPane);\n";
+        return retString;
     }
 
     /**
@@ -213,7 +222,13 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJComboBox(Element e){
-        return "";
+        String retString = "String " + e.getVarName() + "Data = " + '"' + '"' + ");\n" +
+                "DefaultComboBoxModel " + e.getVarName() + "Model = new DefaultComboBoxModel (" + e.getVarName() +"Data.split (\"[\\\\p{Punct}\\\\s]+\"));\n" +
+                "JList " + e.getVarName() + " = new JList(" + e.getVarName() + "Model);\n" +
+                assembleConstraints(e) +
+                "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+                "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     /**
@@ -223,7 +238,13 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJSpinnerList(Element e){
-        return "";
+        String retString = "String " + e.getVarName() + "Data = " + '"' + '"' + ");\n" +
+                "SpinnerListModel " + e.getVarName() + "Model = new SpinnerListModel(" + e.getVarName() + "Data.split (\"[\\\\p{Punct}\\\\s]+\"));\n" +
+                "JSpinner " + e.getVarName() + " = new JSpinner(" + e.getVarName() + "Model);\n" +
+                assembleConstraints(e) +
+                "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+                "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     /**
@@ -233,7 +254,11 @@ public class CodeGenerator {
      * @return String containing Java code
      */
     private String assembleJSpinnerNumber(Element e){
-        return "";
+        String retString = "JSpinner " + e.getVarName() + " = new JSpinner(new SpinnerNumberModel(1.0, 1.0, 5.0, 1.0));\n" +
+            assembleConstraints(e) +
+            "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+            "add(" + e.getVarName() +");\n";
+        return retString;
     }
 
     private String getGridBagConstraintsAnchor(String derp) {

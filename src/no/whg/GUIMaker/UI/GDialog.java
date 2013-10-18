@@ -25,10 +25,8 @@ public class GDialog extends JOptionPane {
 
     /**
      * Shows input dialog
-     *
-     * @param parent The parent JFrame this dialog belongs to
      */
-    public void showInputDialog(GFrame parent){
+    public void showInputDialog(){
         String [] possibilities = element.types;
         String current = element.getType();
 

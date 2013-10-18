@@ -95,6 +95,6 @@ public class GWindowManager {
      */
     public void createAndRunGPanelPreferencesDialog(Element e){
         GDialog prefs = new GDialog(e);
-        prefs.showInputDialog(MainWindow);
+        prefs.showInputDialog();
     }
 }

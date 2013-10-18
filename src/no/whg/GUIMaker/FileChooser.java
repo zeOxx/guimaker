@@ -26,6 +26,7 @@ public class FileChooser {
      *
      * @return An ArrayList, unless there is a failure, which will return null
      */
+    @SuppressWarnings("unchecked")
     public Vector<Element> loadGUI (){
         JFileChooser jfc = new JFileChooser();
         int returnVal = jfc.showOpenDialog(null);
@@ -68,8 +69,6 @@ public class FileChooser {
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = jfc.getSelectedFile();
-            String name = file.getName();
-            name = name.replace(".guim", "");
 
             int index = file.getName().indexOf(".");
 

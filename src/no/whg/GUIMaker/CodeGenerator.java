@@ -119,11 +119,11 @@ public class CodeGenerator {
      */
     private String assembleConstraints(Element e){
         String retString = "gbc.gridx = " + e.getRow() + ";\n" +
-                            "gbc.gridy = " + e.getColumn() + ";\n" +
-                            "gbc.gridwidth = " + e.getRows() + ";\n" +
-                            "gbc.gridheight = " + e.getColumns() + ";\n" +
-                            "gbc.anchor = " + getGridBagConstraintsAnchor(e.getAnchor()) + ";\n" +
-                            "gbc.fill = " + getGridBagConstraintsFill(e.getFill()) + ";\n";
+                "gbc.gridy = " + e.getColumn() + ";\n" +
+                "gbc.gridwidth = " + e.getRows() + ";\n" +
+                "gbc.gridheight = " + e.getColumns() + ";\n" +
+                "gbc.anchor = " + getGridBagConstraintsAnchor(e.getAnchor()) + ";\n" +
+                "gbc.fill = " + getGridBagConstraintsFill(e.getFill()) + ";\n";
         return retString;
     }
 
@@ -135,9 +135,9 @@ public class CodeGenerator {
      */
     private String assembleJLabel(Element e){
         String retString = "JLabel " + e.getVarName() + " = new JLabel(" + '"' + '"' + ");\n" +
-                           assembleConstraints(e) +
-                           "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
-                           "add(" + e.getVarName() +");\n";
+               assembleConstraints(e) +
+               "layout.setConstraints(" + e.getVarName() + ", gbc);\n" +
+               "add(" + e.getVarName() +");\n";
         return retString;
     }
 
@@ -236,40 +236,40 @@ public class CodeGenerator {
         return "";
     }
 
-    private String getGridbagConstraintsAnchor(int derp) {
+    private String getGridBagConstraintsAnchor(String derp) {
         switch (derp) {
-            case 0:
+            case "0":
                 return "CENTER";
-            case 1:
+            case "1":
                 return "EAST";
-            case 2:
+            case "2":
                 return "NORTH";
-            case 3:
+            case "3":
                 return "NORTHEAST";
-            case 4:
+            case "4":
                 return "NORTHWEST";
-            case 5:
+            case "5":
                 return "SOUTH";
-            case 6:
+            case "6":
                 return "SOUTHEAST";
-            case 7:
+            case "7":
                 return "SOUTHWEST";
-            case 8:
+            case "8":
                 return "WEST";
             default:
                 return "CETNER";
         }
     }
 
-    private String getGridbagConstrainsFill(int derp) {
+    private String getGridBagConstraintsFill(String derp) {
         switch (derp) {
-            case 0:
+            case "0":
                 return "NONE";
-            case 1:
+            case "1":
                 return "BOTH";
-            case 2:
+            case "2":
                 return "VERTICAL";
-            case 3:
+            case "3":
                 return "HORIZONTAL";
             default:
                 return "NONE";

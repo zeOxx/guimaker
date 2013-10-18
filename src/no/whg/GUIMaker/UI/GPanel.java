@@ -347,13 +347,14 @@ public class GPanel extends JPanel{
         }
 
         /**
+         * Renders all ImageIcons in ComboBox. Automatically called
          *
          * @param list
          * @param value
          * @param index
          * @param isSelected
          * @param hasFocus
-         * @return
+         * @return The cell renderer Component
          */
         @Override
         public Component getListCellRendererComponent(JList list, Object value,
@@ -392,13 +393,14 @@ public class GPanel extends JPanel{
         }
 
         /**
+         * Renders all ImageIcons in ComboBox. Automatically called
          *
          * @param list
          * @param value
          * @param index
          * @param isSelected
          * @param hasFocus
-         * @return
+         * @return The cell renderer Component
          */
         @Override
         public Component getListCellRendererComponent(JList list, Object value,

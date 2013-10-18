@@ -1,5 +1,6 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.CodeGenerator;
 import no.whg.GUIMaker.MyFileManager;
 
 import javax.swing.*;
@@ -38,23 +39,20 @@ public class GFrame extends JFrame {
                             GWindowManager.getInstance().createAndRunPreferencesWindow();
                             break;
                         case KeyEvent.VK_G:
-                            /* TODO: Actually generate something with some function that can be called here */
+                            CodeGenerator.getInstance().assembleAndPrintFile(GWindowManager.getInstance().MainWindow.getPanel().getData());
                             break;
                         case KeyEvent.VK_R:
-                            /* TODO: Create new row */
-                            System.out.println("Ctrl+'R'");
+                            GWindowManager.getInstance().MainWindow.getPanel().addEmptyRow();
                             break;
                         // These two buttons have the same functionality (+)
                         case KeyEvent.VK_ADD:
                         case KeyEvent.VK_PLUS:
-                            /* TODO: Move row up */
-                            System.out.println("Ctrl+'+'");
+                            GWindowManager.getInstance().MainWindow.getPanel().moveRowUp();
                             break;
                         // These two buttons have the same functionality (-)
                         case KeyEvent.VK_SUBTRACT:
                         case KeyEvent.VK_MINUS:
-                            /* TODO: Move row down */
-                            System.out.println("Ctrl+'-'");
+                            GWindowManager.getInstance().MainWindow.getPanel().moveRowDown();
                             break;
                         case KeyEvent.VK_H:
                             GWindowManager.getInstance().createAndRunHelpWindow();

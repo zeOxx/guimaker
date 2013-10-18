@@ -1,6 +1,7 @@
 package no.whg.GUIMaker;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -141,7 +142,18 @@ public class MyFileManager {
         clearRowList();
     }
 
-    public void writeJava(String java){
-        //PrintWriter out = new PrintWriter("filename.txt");
+    public void writeJava(String java_first){
+        fc.writeJava(java_first);
     }
+
+    /*public String loadGeneratorStrings(String path){
+        String generatorString;
+        try {
+            generatorString = fc.loadGeneratorStrings(path);
+        } catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException: " + e.getMessage());
+            generatorString = null;
+        }
+        return generatorString;
+    }*/
 }

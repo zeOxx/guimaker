@@ -1,8 +1,10 @@
 package no.whg.GUIMaker;
 
 import java.io.*;
+import javax.swing.filechooser.FileFilter;
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.filechooser.*;
 
 import static no.whg.GUIMaker.MyFileManager.getInstance;
 
@@ -103,4 +105,44 @@ public class FileChooser {
             System.out.println("IOException: " + e);
         }
     }
+
+    public void writeJava(String java){
+        JFileChooser chooser = new JFileChooser();
+        FileFilter type1 = new ExtensionFilter("Java source", ".java");
+        chooser.setFileFilter(type1);
+        chooser.addChoosableFileFilter(type1);
+        int returnVal = chooser.showSaveDialog(null);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();
+            String name = file.getName();
+            name = name.replace(".java","");
+            java = java.replace("MyGUI",name);
+
+            int index = file.getName().indexOf(".");
+            try {
+                String ext = file.getName().substring(index);
+                if (!ext.equals(".java")){
+                    File dir = file.getParentFile();
+                    file = new File(dir, file.getName()+".java");
+                }
+            } catch (StringIndexOutOfBoundsException e){
+                File dir = file.getParentFile();
+                file = new File(dir, file.getName()+".java");
+            }
+
+            try {
+                Writer output;
+                output = new BufferedWriter(new FileWriter(file));
+                output.write(java);
+                output.close();
+                /* TODO: "file has been saved" dialog */
+            } catch (IOException e) {
+                System.out.println("IOException: " + e);
+            }
+        } else {
+            System.out.println("Invalid option.");
+        }
+    }
 }
+
+

@@ -1,6 +1,5 @@
 package no.whg.GUIMaker;
 
-import java.io.File;
 import java.util.Vector;
 
 /**
@@ -13,8 +12,10 @@ public class CodeGenerator {
     // This class is a singleton, meaning there can only be one instance of this class.
     // Call GWindowManager.getInstance() to use it.
     private static CodeGenerator instance = null;
-    private String block_first = "";
-    private String block_last = "";
+
+    private String java_first = "import javax.swing.*;\nimport java.awt.*;\n\npublic class MyGUI extends JFrame {\n\n    public static void main(String[] args){\n        SwingUtilities.invokeLater(new Runnable() {\n            public void run() {SwingUtilities.invokeLater(new Runnable() {\n                @Override\n                public void run() {\n                    MyGUI GUI = new MyGUI(\"MyGUI\");\n                    GUI.setVisible(true);\n                }\n            });\n            }\n        });\n    }\n\n    public MyGUI(String title){\n        setTitle(title);\n        setSize(700, 400);\n        setLocationRelativeTo(null);\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\n        createGUI();\n    }\n\n    private void createGUI(){";
+    private String java_second = "    }\n\n    private JLabel createJLabel(String value){\n        JLabel label = new JLabel(value);\n        return label;\n    }\n\n    private JButton createJButton(String value){\n        JButton button = new JButton(value);\n        return button;\n    }\n\n    private JTextField createJTextField(int value){\n        JTextField text = new JTextField(value);\n        return text;\n    }\n\n    private JTextArea createJTextArea(int valueR, int valueC){\n        JTextArea text = new JTextArea(valueR, valueC);\n        return text;\n    }\n\n    private JCheckBox createJCheckBox(String value){\n        JCheckBox box = new JCheckBox(value);\n        return box;\n    }\n\n    private JList createJList(Object [] values){\n        JList list = new JList(values);\n        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);\n        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);\n        list.setVisibleRowCount(-1);\n        return list;\n    }\n\n    private JComboBox createJComboBox(String [] values){\n        JComboBox combo = new JComboBox(values);\n        combo.setSelectedIndex(0);\n        return combo;\n    }\n\n    private JSpinner createJSpinnerList(String [] values){\n        SpinnerListModel spinModel = new SpinnerListModel(values);\n        JSpinner spin = new JSpinner(spinModel);\n        return spin;\n    }\n\n    private JSpinner createJSpinnerNumber(int value, int span){\n        // needs to add SpinnerNumberModel\n        SpinnerModel spinModel = new SpinnerNumberModel(value,          //initial value\n                                                    value - span,   //min value\n                                                    value + span,   //max value\n                                                    1);             //step\n        JSpinner spin = new JSpinner(spinModel);\n        return spin;\n    }\n}";
+
     /**
      * Default constructor.
      * Exists only to defeat instantiation.
@@ -22,6 +23,7 @@ public class CodeGenerator {
     protected CodeGenerator(){
         // Exists only to defeat instantiation
     }
+
     /**
      * Singleton
      *
@@ -35,14 +37,15 @@ public class CodeGenerator {
     }
 
     public void assembleAndPrintFile(Vector v){
-        String theFile = "";
+        String partOne = java_first;
+        String partTwo = java_second;
+
         String temp;
-        Vector<Element> elements = v;
-        /* TODO: Assemble the start of the file here. */
-        for (int i = 0; i < elements.size(); i++){
+
+        for (int i = 0; i < v.size(); i++){
             boolean elementLoaded = false;
             temp = "";
-            Element e = elements.get(i);
+            Element e = (Element) v.get(i);
             String type = e.type;
             int j;
             for (j = 0; j < (e.types.length) && (!elementLoaded); j++){
@@ -53,13 +56,21 @@ public class CodeGenerator {
                 }
             }
             if (elementLoaded){
-                theFile = theFile + temp;
+                partOne = partOne + temp;
             }
         }
-        /* TODO: Assemble the end of the file here */
-        MyFileManager.getInstance().writeJava(theFile);
+
+        partOne = partOne + partTwo;
+        MyFileManager.getInstance().writeJava(partOne);
     }
 
+    /**
+     * Sends an Element object to be assembled
+     *
+     * @param e The Element that needs assembling
+     * @param j The type of Element
+     * @return A String containg the assembled Element
+     */
     private String assembleElement(Element e, int j){
         String el;
         switch (j){
@@ -97,38 +108,92 @@ public class CodeGenerator {
         return el;
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJLabel(Element e){
-        return "";
+        return "\n//JLabel up in hurr\n";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJButton(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJTextField(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJTextArea(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJCheckBox(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJList(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJComboBox(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJSpinnerList(Element e){
         return "";
     }
 
+    /**
+     * Assmbles Java code from an Element
+     *
+     * @param e The Element
+     * @return String containing Java code
+     */
     private String assembleJSpinnerNumber(Element e){
         return "";
     }

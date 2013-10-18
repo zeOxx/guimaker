@@ -52,8 +52,10 @@ public class GPanel extends JPanel{
     private void initComponent(int contentWidth, int contentHeight) {
         mousePop = new JPopupMenu();
         JMenuItem propItem = new JMenuItem(Lang.getInstance().getString("properties"));
+        propItem.setName("properties");
         propItem.addActionListener(new ActionListenerPopup());
         JMenuItem deleteItem = new JMenuItem(Lang.getInstance().getString("delete"));
+        deleteItem.setName("delete");
         deleteItem.addActionListener(new ActionListenerPopup());
         mousePop.add(propItem);
         mousePop.add(deleteItem);
@@ -216,6 +218,13 @@ public class GPanel extends JPanel{
 
     public void resetData() {
         tableModel.resetData();
+    }
+
+    public void setColumnNamesInModel() {
+        setColumnNames();
+        tableModel.setColumnNames(columnNames);
+        changeColumnSize();
+        tableModel.fireTableStructureChanged();
     }
 
     public void changeElementInTable(Element e) {
@@ -407,9 +416,9 @@ public class GPanel extends JPanel{
         public void actionPerformed(ActionEvent e) {
             JMenuItem item = (JMenuItem)e.getSource();
 
-            if (item.getText() == Lang.getInstance().getString("properties"))
+            if (item.getName().equals("properties"))
                 GWindowManager.getInstance().createAndRunGPanelPreferencesDialog((Element)tableModel.getData().get(table.getSelectedRow()));
-            else if (item.getText() == Lang.getInstance().getString("delete"))
+            else if (item.getName().equals("delete"))
                 GWindowManager.getInstance().MainWindow.getPanel().deleteRow(table.getSelectedRow());
         }
     }

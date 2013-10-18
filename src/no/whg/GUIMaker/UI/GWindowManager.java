@@ -86,6 +86,7 @@ public class GWindowManager {
     public void createAndRunPreferencesWindow(){
         PreferencesWindow = new PreferencesDialog(Lang.getInstance().getCurrentLocale());
         PreferencesWindow.showInputDialog(MainWindow);
+        GWindowManager.getInstance().MainWindow.getPanel().setColumnNamesInModel();
     }
 
     public void createAndRunGPanelPreferencesDialog(Element e){

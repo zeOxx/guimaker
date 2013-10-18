@@ -3,6 +3,7 @@ package no.whg.GUIMaker;
 import java.io.*;
 import javax.swing.filechooser.FileFilter;
 import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.*;
 import javax.swing.filechooser.*;
 
@@ -15,14 +16,11 @@ import static no.whg.GUIMaker.MyFileManager.getInstance;
  * Time: 4:58 PM
  */
 public class FileChooser {
-    JFileChooser jfc;
-
     /**
      * Constructor for FileChooser
      */
     public FileChooser (){
-        //Create a file chooser
-        jfc = new JFileChooser();
+
     }
 
     /**
@@ -32,7 +30,8 @@ public class FileChooser {
      *
      * @return An ArrayList, unless there is a failure, which will return null
      */
-    public ArrayList loadGUI (){
+    public Vector<Element> loadGUI (){
+        JFileChooser jfc = new JFileChooser();
         int returnVal = jfc.showOpenDialog(null);
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -41,7 +40,7 @@ public class FileChooser {
             try {
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                ArrayList re = (ArrayList<RowElement>)ois.readObject();
+                Vector<Element> re = (Vector<Element>)ois.readObject();
                 ois.close();
                 fis.close();
                 return re;
@@ -63,16 +62,38 @@ public class FileChooser {
      *
      * TODO: Confirmation dialog
      *
-     * @param re The ArrayList to save
+     * @param data The Vector to save
      */
-    public void saveGUI (ArrayList re){
+    public void saveGUI (Vector<Element> data){
+        JFileChooser jfc = new JFileChooser();
+        FileFilter type1 = new ExtensionFilter("GUI source", ".guim");
+        jfc.setFileFilter(type1);
+        jfc.addChoosableFileFilter(type1);
+
         int returnVal = jfc.showSaveDialog(null);
+
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = jfc.getSelectedFile();
+            String name = file.getName();
+            name = name.replace(".guim", "");
+
+            int index = file.getName().indexOf(".");
+
+            try {
+                String ext = file.getName().substring(index);
+                if (!ext.equals(".guim")) {
+                    File dir = file.getParentFile();
+                    file = new File(dir, file.getName() + ".guim");
+                }
+            } catch (StringIndexOutOfBoundsException e) {
+                File dir = file.getParentFile();
+                file = new File(dir, file.getName() + ".guim");
+            }
+
             try {
                 FileOutputStream fos = new FileOutputStream(file);
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(re);
+                oos.writeObject(data);
                 oos.close();
                 fos.close();
                 getInstance().setLastFile(file);
@@ -90,14 +111,14 @@ public class FileChooser {
      *
      * TODO: Confirmation dialog
      *
-     * @param re The ArrayList to save
+     * @param data The ArrayList to save
      * @param lastFile The previously used location
      */
-    public void saveGUI (ArrayList re, File lastFile){
+    public void saveGUI (Vector<Element> data, File lastFile){
         try {
             FileOutputStream fos = new FileOutputStream(lastFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(re);
+            oos.writeObject(data);
             oos.close();
             fos.close();
             /* TODO: "file has been saved" dialog */

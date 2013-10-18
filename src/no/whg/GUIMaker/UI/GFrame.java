@@ -32,7 +32,7 @@ public class GFrame extends JFrame {
                             MyFileManager.getInstance().loadGUI();
                             break;
                         case KeyEvent.VK_S:
-                            MyFileManager.getInstance().saveGUI(false);
+                            MyFileManager.getInstance().saveGUI(false, GWindowManager.getInstance().MainWindow.getPanel().getData());
                             break;
                         case KeyEvent.VK_P:
                             GWindowManager.getInstance().createAndRunPreferencesWindow();

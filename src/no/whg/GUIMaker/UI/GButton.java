@@ -47,6 +47,7 @@ public class GButton extends JButton implements Observer {
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().newGUI();
+                        GWindowManager.getInstance().MainWindow.getPanel().resetData();
                     }
                 });
                 break;
@@ -56,6 +57,7 @@ public class GButton extends JButton implements Observer {
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().loadGUI();
+                        GWindowManager.getInstance().MainWindow.getPanel().setData(MyFileManager.getInstance().getRowList());
                     }
                 });
                 break;
@@ -64,7 +66,7 @@ public class GButton extends JButton implements Observer {
                 setIcon(icon);
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        MyFileManager.getInstance().saveGUI(false);
+                        MyFileManager.getInstance().saveGUI(false, GWindowManager.getInstance().MainWindow.getPanel().getData());
                     }
                 });
                 break;

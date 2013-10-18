@@ -1,5 +1,7 @@
 package no.whg.GUIMaker;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * Package: no.whg.GUIMaker
@@ -7,7 +9,9 @@ package no.whg.GUIMaker;
  * Date: 10.10.13
  * Time: 17:47
  */
-public class Element {
+public class Element implements Serializable {
+
+    public static final long serialVersionUID = 42L;
 
     public static String[] types = { "JLabel", "JButton", "JTextField", "JTextArea", "JCheckBox", "JList", "JComboBox", "JSpinnerList", "JSpinnerNumber"};
     protected String type;

@@ -5,8 +5,6 @@ import no.whg.GUIMaker.GUIMaker;
 import no.whg.GUIMaker.Lang;
 
 import javax.swing.*;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -209,6 +207,15 @@ public class GPanel extends JPanel{
 
     public Vector<Element> getData() {
         return tableModel.getData();
+    }
+
+    public void setData(Vector<Element> data) {
+        tableModel.setData(data);
+        tableModel.fireTableDataChanged();
+    }
+
+    public void resetData() {
+        tableModel.resetData();
     }
 
     public void changeElementInTable(Element e) {

@@ -1,9 +1,12 @@
 package no.whg.GUIMaker;
 
+import no.whg.GUIMaker.UI.GWindowManager;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,7 +19,7 @@ public class MyFileManager {
     // Call Language.getInstance() to use it.
     private static MyFileManager instance = null;
 
-    private ArrayList rowList = new ArrayList<RowElement>();
+    private Vector<Element> rowList = new Vector<Element>();
     protected FileChooser fc = new FileChooser();
     private File lastFile = null;
 
@@ -62,7 +65,7 @@ public class MyFileManager {
      *
      * @return Returns the ArrayList rowList
      */
-    public ArrayList getRowList(){
+    public Vector<Element> getRowList(){
         return this.rowList;
     }
 
@@ -71,7 +74,7 @@ public class MyFileManager {
      *
      * @param arg The ArrayList with which to replace rowList
      */
-    private void setRowList(ArrayList arg){
+    private void setRowList(Vector<Element> arg){
         this.rowList = arg;
     }
 
@@ -80,7 +83,7 @@ public class MyFileManager {
      *
      * @param arg The the object to be inserted into rowList
      */
-    public void addObjectToRowList(RowElement arg){
+    public void addObjectToRowList(Element arg){
         this.rowList.add(arg);
     }
 
@@ -106,7 +109,7 @@ public class MyFileManager {
      * Clears the ArrayList rowList
      */
     private void clearRowList(){
-        this.rowList = new ArrayList<RowElement>();
+        this.rowList = new Vector<Element>();
     }
 
     /**
@@ -121,14 +124,14 @@ public class MyFileManager {
      *
      * @param saveAs Whether the dialog should be opened
      */
-    public void saveGUI (boolean saveAs){
+    public void saveGUI (boolean saveAs, Vector<Element> data){
         if (saveAs){
-            fc.saveGUI(getRowList());
+            fc.saveGUI(data);
         } else {
             if (lastFile == null){
-                fc.saveGUI(getRowList());
+                fc.saveGUI(data);
             } else {
-                fc.saveGUI(getRowList(), lastFile);
+                fc.saveGUI(data, lastFile);
             }
         }
     }
@@ -138,7 +141,6 @@ public class MyFileManager {
      */
     public void newGUI(){
         lastFile = null;
-        /* TODO: reset table */
         clearRowList();
     }
 

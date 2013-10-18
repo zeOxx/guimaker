@@ -55,20 +55,22 @@ public class GMenuItem extends JMenuItem implements Observer {
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
                         MyFileManager.getInstance().loadGUI();
+                        GWindowManager.getInstance().MainWindow.getPanel().setData(MyFileManager.getInstance().getRowList());
                     }
                 });
+
                 break;
             case 2: // File/Save
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        MyFileManager.getInstance().saveGUI(false);
+                        MyFileManager.getInstance().saveGUI(false, GWindowManager.getInstance().MainWindow.getPanel().getData());
                     }
                 });
                 break;
             case 3: // File/Save as
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        MyFileManager.getInstance().saveGUI(true);
+                        MyFileManager.getInstance().saveGUI(true, GWindowManager.getInstance().MainWindow.getPanel().getData());
                     }
                 });
                 break;

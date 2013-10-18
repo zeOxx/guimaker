@@ -186,4 +186,13 @@ public class GTableModel extends AbstractTableModel {
     public Vector<Element> getData() {
         return data;
     }
+
+    public void setData(Vector<Element> data) {
+        this.data = data;
+    }
+
+    public void resetData() {
+        this.data = new Vector<Element>();
+        fireTableDataChanged();
+    }
 }

@@ -1,10 +1,6 @@
 package no.whg.GUIMaker.UI;
 
-import no.whg.GUIMaker.GUIMaker;
-import no.whg.GUIMaker.Lang;
-
 import javax.swing.*;
-import java.net.URL;
 
 /**
  * Created with IntelliJ IDEA.

@@ -93,22 +93,13 @@ public class GFrame extends JFrame {
 
         panel = new GPanel(700, 300);
         this.getContentPane().add(panel);
-
-
-        // Contents
-        /* TODO: Add panel */
-        //GPanel Table = new GPanel(new ComponentTable());
-        //panel.setPreferredScrollableViewportSize(new Dimension(500, 70));
-        //panel.setFillsViewportHeight(true);
-        //panel.getModel().addTableModelListener(panel);
-
-        //Create the scroll pane and add the panel to it.
-        //JScrollPane scrollPane = new JScrollPane(panel);
-
-        //Add the scroll pane to this panel.
-        //add(scrollPane);
     }
 
+    /**
+     * Get the GPanel
+     *
+     * @return The GPanel
+     */
     public GPanel getPanel() {
         return panel;
     }

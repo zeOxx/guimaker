@@ -8,22 +8,39 @@ import javax.swing.filechooser.FileFilter;
  * User: snorre
  * Date: 10/18/13
  * Time: 1:50 AM
- * To change this template use File | Settings | File Templates.
  */
 public class ExtensionFilter extends FileFilter {
     private String extensions[];
 
     private String description;
 
+    /**
+     * Constructor method for ExtensionFilter
+     *
+     * @param description Filter description
+     * @param extension Extension to include in filter
+     */
     public ExtensionFilter(String description, String extension) {
         this(description, new String[] { extension });
     }
 
+    /**
+     * Constructor method for ExtensionFilter
+     *
+     * @param description Filter description
+     * @param extensions Extensions to include in filter
+     */
     public ExtensionFilter(String description, String extensions[]) {
         this.description = description;
         this.extensions = (String[]) extensions.clone();
     }
 
+    /**
+     * Whether to accept file
+     *
+     * @param file File to test
+     * @return Whether file was accepted
+     */
     public boolean accept(File file) {
         if (file.isDirectory()) {
             return true;
@@ -40,6 +57,11 @@ public class ExtensionFilter extends FileFilter {
         return false;
     }
 
+    /**
+     * Get description
+     *
+     * @return Description
+     */
     public String getDescription() {
         return (description == null ? extensions[0] : description);
     }

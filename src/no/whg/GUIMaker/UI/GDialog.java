@@ -14,13 +14,19 @@ import javax.swing.*;
 public class GDialog extends JOptionPane {
     Element element;
 
+    /**
+     * Constructor for GDialog
+     *
+     * @param e An Element for future reference
+     */
     public GDialog(Element e){
         this.element = e;
     }
 
     /**
+     * Shows input dialog
      *
-     * @param parent
+     * @param parent The parent JFrame this dialog belongs to
      */
     public void showInputDialog(GFrame parent){
         String [] possibilities = element.types;

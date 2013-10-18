@@ -45,13 +45,9 @@ import javax.swing.text.Document;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created with IntelliJ IDEA.

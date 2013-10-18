@@ -2,7 +2,6 @@ package no.whg.GUIMaker.UI.Preferences;
 
 import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.UI.GFrame;
-import no.whg.GUIMaker.UI.GWindowManager;
 
 import javax.swing.*;
 import java.util.Locale;

@@ -1,11 +1,6 @@
 package no.whg.GUIMaker;
 
-import no.whg.GUIMaker.UI.GWindowManager;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -144,18 +139,12 @@ public class MyFileManager {
         clearRowList();
     }
 
+    /**
+     * Calls funtion to write Java to file
+     *
+     * @param java_first Java code to write
+     */
     public void writeJava(String java_first){
         fc.writeJava(java_first);
     }
-
-    /*public String loadGeneratorStrings(String path){
-        String generatorString;
-        try {
-            generatorString = fc.loadGeneratorStrings(path);
-        } catch (FileNotFoundException e){
-            System.out.println("FileNotFoundException: " + e.getMessage());
-            generatorString = null;
-        }
-        return generatorString;
-    }*/
 }

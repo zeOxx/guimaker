@@ -1,11 +1,9 @@
 package no.whg.GUIMaker;
 
-import java.io.*;
-import javax.swing.filechooser.FileFilter;
-import java.util.ArrayList;
-import java.util.Vector;
 import javax.swing.*;
-import javax.swing.filechooser.*;
+import javax.swing.filechooser.FileFilter;
+import java.io.*;
+import java.util.Vector;
 
 import static no.whg.GUIMaker.MyFileManager.getInstance;
 
@@ -25,8 +23,6 @@ public class FileChooser {
 
     /**
      * Opens a window where the user may load an ArrayList from file, and loads the selected file into an Arraylist
-     *
-     * TODO: Confirmation dialog
      *
      * @return An ArrayList, unless there is a failure, which will return null
      */
@@ -59,8 +55,6 @@ public class FileChooser {
 
     /**
      * Opens a window where the user may save an ArrayList to file
-     *
-     * TODO: Confirmation dialog
      *
      * @param data The Vector to save
      */
@@ -97,7 +91,6 @@ public class FileChooser {
                 oos.close();
                 fos.close();
                 getInstance().setLastFile(file);
-                /* TODO: "file has been saved" dialog */
             } catch (IOException e) {
                 System.out.println("IOException: " + e);
             }
@@ -109,8 +102,6 @@ public class FileChooser {
     /**
      * Saves an ArrayList to file at a previously used location
      *
-     * TODO: Confirmation dialog
-     *
      * @param data The ArrayList to save
      * @param lastFile The previously used location
      */
@@ -121,12 +112,16 @@ public class FileChooser {
             oos.writeObject(data);
             oos.close();
             fos.close();
-            /* TODO: "file has been saved" dialog */
         } catch (IOException e) {
             System.out.println("IOException: " + e);
         }
     }
 
+    /**
+     * Writes generated Java code to file
+     *
+     * @param java The Java code to write
+     */
     public void writeJava(String java){
         JFileChooser chooser = new JFileChooser();
         FileFilter type1 = new ExtensionFilter("Java source", ".java");

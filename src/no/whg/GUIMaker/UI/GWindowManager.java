@@ -88,6 +88,11 @@ public class GWindowManager {
         GWindowManager.getInstance().MainWindow.getPanel().setColumnNamesInModel();
     }
 
+    /**
+     * Creates and runs the GPanel preference window
+     *
+     * @param e Element object to pass to the dialog
+     */
     public void createAndRunGPanelPreferencesDialog(Element e){
         GDialog prefs = new GDialog(e);
         prefs.showInputDialog(MainWindow);

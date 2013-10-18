@@ -125,7 +125,7 @@ public class GMenuItem extends JMenuItem implements Observer {
                 });
                 break;
             default:
-                /* TODO: Error message(s) */
+                System.out.println("No such button.");
                 break;
         }
     }

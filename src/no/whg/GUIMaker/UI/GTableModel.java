@@ -180,6 +180,11 @@ public class GTableModel extends AbstractTableModel {
                 data.size() - 1);
     }
 
+    /**
+     * Deletes given row
+     *
+     * @param row Row to delete
+     */
     public void deleteRow(int row) {
         if (row >= 0 && row < getRowCount()) {
             data.remove(row);
@@ -187,14 +192,27 @@ public class GTableModel extends AbstractTableModel {
         }
     }
 
+    /**
+     * Gives the element vector
+     *
+     * @return Returns the element vector
+     */
     public Vector<Element> getData() {
         return data;
     }
 
+    /**
+     * Sets the element vector to a given vector
+     *
+     * @param data Vector to set as data
+     */
     public void setData(Vector<Element> data) {
         this.data = data;
     }
 
+    /**
+     * Resets the data vector
+     */
     public void resetData() {
         this.data = new Vector<Element>();
         fireTableDataChanged();

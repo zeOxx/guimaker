@@ -1,5 +1,6 @@
 package no.whg.GUIMaker.UI;
 
+import no.whg.GUIMaker.CodeGenerator;
 import no.whg.GUIMaker.Lang;
 import no.whg.GUIMaker.MyFileManager;
 
@@ -38,7 +39,6 @@ public class GMenuItem extends JMenuItem implements Observer {
 
     /**
      * Creates content for this menu item
-     * TODO: add functionality to switch cases 4, 5, 7-10, error message to default
      *
      * @param type The type of content to create
      */
@@ -84,7 +84,7 @@ public class GMenuItem extends JMenuItem implements Observer {
             case 5: // File/Generate code
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //generateCode();
+                        CodeGenerator.getInstance().assembleAndPrintFile(GWindowManager.getInstance().MainWindow.getPanel().getData());
                     }
                 });
                 break;
@@ -98,7 +98,7 @@ public class GMenuItem extends JMenuItem implements Observer {
             case 7: // Edit/New row
                 this.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        //newRow();
+                        GWindowManager.getInstance().MainWindow.getPanel().addEmptyRow();
                     }
                 });
                 break;

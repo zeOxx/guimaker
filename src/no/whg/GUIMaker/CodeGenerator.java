@@ -237,24 +237,24 @@ public class CodeGenerator {
     }
 
     private String getGridBagConstraintsAnchor(String derp) {
-        switch (derp) {
-            case "0":
+        switch (derp.charAt(0)) {
+            case 0:
                 return "CENTER";
-            case "1":
+            case 1:
                 return "EAST";
-            case "2":
+            case 2:
                 return "NORTH";
-            case "3":
+            case 3:
                 return "NORTHEAST";
-            case "4":
+            case 4:
                 return "NORTHWEST";
-            case "5":
+            case 5:
                 return "SOUTH";
-            case "6":
+            case 6:
                 return "SOUTHEAST";
-            case "7":
+            case 7:
                 return "SOUTHWEST";
-            case "8":
+            case 8:
                 return "WEST";
             default:
                 return "CETNER";
@@ -262,14 +262,14 @@ public class CodeGenerator {
     }
 
     private String getGridBagConstraintsFill(String derp) {
-        switch (derp) {
-            case "0":
+        switch (derp.charAt(0)) {
+            case 0:
                 return "NONE";
-            case "1":
+            case 1:
                 return "BOTH";
-            case "2":
+            case 2:
                 return "VERTICAL";
-            case "3":
+            case 3:
                 return "HORIZONTAL";
             default:
                 return "NONE";

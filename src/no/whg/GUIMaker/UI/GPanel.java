@@ -232,6 +232,10 @@ public class GPanel extends JPanel{
         tableModel.getData().get(row).setType(e.getType());
         tableModel.getData().get(row).setVarName(e.getVarName());
         tableModel.getData().get(row).setWidth(e.getWidth());
+        tableModel.getData().get(row).setWrap(e.isWrap());
+        tableModel.getData().get(row).setCombo(e.isCombo());
+        tableModel.getData().get(row).setScroll(e.isScroll());
+        tableModel.getData().get(row).setSpinner(e.getSpinner());
 
         tableModel.fireTableDataChanged();
     }

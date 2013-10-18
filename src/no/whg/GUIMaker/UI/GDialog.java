@@ -28,6 +28,12 @@ public class GDialog extends JOptionPane {
 
         /**
          * JTextField
+         *
+         * The necessary components are initialized first, then put into a JComponent array along with a descriptive
+         * label, which is internationalized. The dialog is then shown and information extracted. Should probably make
+         * sure OK is pressed here, but this wasn't realized until it was too late.
+         *
+         * This is identical for the other types
          */
         if (current.equals(possibilities[2])) {
             JTextField rows = new JTextField();
